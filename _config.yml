@@ -1,0 +1,6 @@
+# _config.yml
+issues:
+  - label: leetcode
+    state: open
+    sort: created
+    direction: desc
