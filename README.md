@@ -26,10 +26,19 @@ We welcome contributions! If you want to add a solution:
 ## Contributors
 
 Thank you to all the contributors who have helped create and maintain this repository!
+contributors = [
+    {
+        'name': 'Sizhuo Long',
+        'link': 'https://github.com/longsizhuo123'
+    },
+    {
+        'name': '嘿嘿大魔王',
+        'link': 'https://github.com/comeonboi'
+    }
+]
 
 {% for contributor in contributors %}
-* [comeonboi](https://github.com/comeonboi)
-* [longsizhuo123](https://github.com/longsizhuo123)
+* [{{contributor.name}}]({{contributor.link}})
 {% endfor %}
 
 ## License
