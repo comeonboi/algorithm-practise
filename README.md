@@ -28,8 +28,8 @@ We welcome contributions! If you want to add a solution:
 Thank you to all the contributors who have helped create and maintain this repository!
 
 {% for contributor in contributors %}
-* [{{comeonboi}}]({{https://github.com/comeonboi}})
-* [{{longsizhuo123}}]({{https://github.com/longsizhuo123}})
+* [comeonboi](https://github.com/comeonboi)
+* [longsizhuo123](https://github.com/longsizhuo123)
 {% endfor %}
 
 ## License
