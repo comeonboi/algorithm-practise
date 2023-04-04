@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LeetcodeEditor">
+    <option name="projectConfig">
+      <map>
+        <entry key="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/[1017]负二进制转换.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/doc/content/[1017]负二进制转换.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1017" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/[1017]负二进制转换.py" />
+              <option name="titleSlug" value="convert-to-base-2" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/[209]长度最小的子数组.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/doc/content/[209]长度最小的子数组.md" />
+              <option name="frontendQuestionId" value="leetcode.cn209" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/[209]长度最小的子数组.py" />
+              <option name="titleSlug" value="minimum-size-subarray-sum" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/[977]有序数组的平方.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/doc/content/[977]有序数组的平方.md" />
+              <option name="frontendQuestionId" value="leetcode.cn977" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/[977]有序数组的平方.py" />
+              <option name="titleSlug" value="squares-of-a-sorted-array" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
