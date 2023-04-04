@@ -8,9 +8,10 @@ A collection of LeetCode problems and solutions created by HeyHey大魔王 and �
 
 | # | Title | Solution | Difficulty |
 |---| ----- | -------- | ---------- |
-{% for issue in site.issues %}
-| {{ issue.number }} | [{{ issue.title }}]({{ issue.html_url }}) | [Python]({{ site.baseurl }}/python/{{ issue.number }}_{{ issue.title | replace: ' ', '_' | replace: '.', '_' | downcase }}.py) | {{ issue.labels[0].name }} |
-{% endfor %}
+| 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | [Python](https://github.com/comeonboi/leetcode-solutions/blob/main/python/1_two_sum.py) | Easy |
+| 2 | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) | [Python](https://github.com/longsizhuo123/leetcode-solutions/blob/main/python/2_add_two_numbers.py) | Medium |
+| 3 | [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | [Python](https://github.com/comeonboi/leetcode-solutions/blob/main/python/3_longest_substring_without_repeating_characters.py) | Medium |
+| 4 | [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) | [Python](https://github.com/longsizhuo123/leetcode-solutions/blob/main/python/4_median_of_two_sorted_arrays.py) | Hard |
 
 ## Contributing
 
