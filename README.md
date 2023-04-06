@@ -29,6 +29,8 @@ Thank you to all the contributors who have helped create and maintain this repos
 
 * [HeyHey大魔王](https://github.com/comeonboi)
 * [龙龙](https://github.com/longsizhuo123)
+* [ENKA](https://github.com/Jessienka)
+* [AF](https://github.com/XIAOCHENG-LEE)
 
 ## License
 
