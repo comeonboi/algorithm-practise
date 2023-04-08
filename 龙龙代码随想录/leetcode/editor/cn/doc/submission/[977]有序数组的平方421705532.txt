@@ -1,0 +1,10 @@
+class Solution:
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        nu = []
+        for i in nums:
+            nu.append(i * i)
+        nu.sort()
+        return nu
+
+# runtime:36 ms
+# memory:16.9 MB
