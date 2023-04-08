@@ -1,18 +1,24 @@
-import math
-class Solution(object):
-    def search(self, nums, target):
+class Solution:
+    def search(self, nums: list[int], target: int) -> int:
         """
         :type nums: List[int]
         :type target: int
         :rtype: int
         """
-        mid = math.ceil(len(nums))
+        mid = len(nums)//2
+        if mid == 0 :
+            if target == nums[0]:
+                return 0
+            else:
+                return -1
         if target == nums[mid]:
-            return print(mid)
+            return mid
         if target < nums[mid]:
-            return self.search(self, nums[:mid], target)
-        elif target > nums[mid]:
-            return self.search(self, nums[mid:], target)
-        else:
-            return print(-1)
-
+            return self.search(nums[:mid], target)
+        if target > nums[mid]:
+            x = self.search(nums[mid:], target)
+            if x == -1:
+                return -1
+            else:
+                return x + mid
+        return -1
