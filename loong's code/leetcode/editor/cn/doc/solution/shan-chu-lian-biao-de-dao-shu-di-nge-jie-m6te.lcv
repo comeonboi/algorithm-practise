@@ -1,0 +1,104 @@
+### 解题思路
+
+思路1：计算链表长度删除
+删除倒数第n个其实可以看做删除正数的总长度-n+1个
+首先我们可以写一个方法来获取总长度  定义一个辅助遍历存放head 而后进行遍历  只要temp.next不是空 就说明当前节点是有效的
+得到链表的有效长度后 我们就可以进行删除操作
+首先判断链表中是否就1个节点 如果就1一个节点 则直接返回空 删除
+定义一个变量size 用于存链表长度-n+1的长度
+这里需要判断一下 要判断是否删除的是第一个节点 若删除的是第一个节点则直接进行删除
+否则通过size 遍历到被删除节点的前一个节点
+而后将被删除的节点的后继也就是next指向下一个节点的下一个节点
+最后返回头节点
+思路2：快慢指针
+最开始想到了快慢指针 但是因为对计算链表长度比较熟悉 所以没有进行研究 后期看了题解 又完善了下快慢指针
+首先我们需要定义一个头节点（这里的头节点和题目中的head不是一个） dummy 数组存0  后继指向给定的头节点head
+首先我们可以定义两根指针 first  second   其中first指向第一个节点  而second指向头节点dummy 我看官方叫哑节点 我这里就叫头节点
+首先first指针先行走n个位置  这样我们在同时走first和second  当最后first为null时  second正好指向被删除节点的前一个节点
+这时我们只需要将second的后继指向下个节点的下个节点即可
+最后我们返回第一个节点即可 也就是dummy.next
+
+### 代码
+
+思路1代码实现：
+
+* java
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        if (head.next == null){
+             return null;
+        }
+        ListNode temp = head;
+        int size = getLength(temp) - n;
+        if (size == 0){
+            head = head.next;
+        }
+        for (int i = 0; i < size - 1; i++){
+             temp = temp.next;
+        }
+        temp.next = temp.next.next;
+        return head;
+        
+    }
+
+    public int getLength(ListNode head){
+        ListNode temp = head;
+        int sum = 1;
+        while(true){
+            if (temp.next == null){
+                break;
+            }
+            temp = temp.next;
+            sum++;
+            
+        }
+        return sum;
+    }
+}
+```
+
+思路2代码实现：
+
+* java
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        ListNode dummy = new ListNode(0,head);
+        ListNode first = head;
+        ListNode second = dummy;
+        for (int i = 0; i < n; i++){
+            first = first.next;
+        }
+        while (first != null){
+            first = first.next;
+            second = second.next;
+        }
+        second.next = second.next.next;
+        return dummy.next; 
+    }
+}
+```
+

@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int removeElement(std::vector<int>& nums, int val) {
+        for(int i = 0; i < nums.size(); ++i){
+            if (nums[i] == val){
+                nums.erase(nums.begin() + i);
+            }
+        }
+        return nums.size();
+    }
+};
+
+//total_testcases:113
+//total_correct:85
+//input_formatted:[0,1,2,2,3,0,4,2]
+2
+//expected_output:[0,1,4,0,3]
+//code_output:[0,1,2,3,0,4]
+//last_testcase:[0,1,2,2,3,0,4,2]
+2

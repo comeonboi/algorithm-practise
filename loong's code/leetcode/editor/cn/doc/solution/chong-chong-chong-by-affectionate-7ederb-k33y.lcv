@@ -1,0 +1,65 @@
+> Problem: [19. 删除链表的倒数第 N 个结点](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/description/)
+
+[TOC]
+
+# 思路
+
+> 讲述看到这一题的思路
+
+# 解题方法
+
+> 描述你的解题方法
+
+# 复杂度
+
+- 时间复杂度:
+
+> 添加时间复杂度, 示例： $O(n)$
+
+- 空间复杂度:
+
+> 添加空间复杂度, 示例： $O(n)$
+
+# Code
+
+* []
+
+```C++
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* removeNthFromEnd(ListNode* head, int n) {
+        //定义两个指针, ptr1  ptr2
+        //因为题目中是删除倒数第n个节点,定义ptr1指针,指向此节点的前一个节点上
+        //所以两个指针相差的节点数就是从倒数第一个节点到n节点的之间的节点数
+        ListNode *dummyHead = new ListNode(-1);
+        dummyHead->next = head;
+        ListNode *ptr1 = dummyHead;
+        ListNode *ptr2 = dummyHead;
+        n++; //要指向删除节点的前一个节点,快节点多走3次到底空节点,可以画图看看
+        while(n-- && ptr1){
+            ptr1 = ptr1->next;
+        }
+        while(ptr1){
+            ptr2 = ptr2->next;
+            ptr1 = ptr1->next;
+        }
+        ListNode *p = ptr2->next;
+        ptr2->next = p->next;
+        delete p;
+
+        return dummyHead->next;
+    }
+};
+```
+
