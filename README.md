@@ -2,7 +2,7 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/comeonboi/leetcode-solutions) [![GitHub issues](https://img.shields.io/github/issues-raw/comeonboi/leetcode-solutions)](https://github.com/comeonboi/leetcode-solutions/issues) [![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/comeonboi/leetcode-solutions)](https://github.com/comeonboi/leetcode-solutions/pulls) [![GitHub contributors](https://img.shields.io/github/contributors/comeonboi/leetcode-solutions)](https://github.com/comeonboi/leetcode-solutions/graphs/contributors)
 
-A collection of LeetCode problems and solutions created by HeyHey大魔王 and 龙龙.
+A collection of LeetCode problems and solutions created by 嘿嘿大魔王\ 龙龙 \ Jessica \ Ceither \ Angro.
 
 ## Problems
 
