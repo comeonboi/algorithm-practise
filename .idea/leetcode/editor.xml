@@ -91,6 +91,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/[142]环形链表 II.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/doc/content/[142]环形链表 II.md" />
+              <option name="frontendQuestionId" value="leetcode.cn142" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/[142]环形链表 II.py" />
+              <option name="titleSlug" value="linked-list-cycle-ii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/[19]删除链表的倒数第 N 个结点.py">
           <value>
             <LeetcodeEditor>
@@ -187,6 +198,17 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/[977]有序数组的平方.py" />
               <option name="titleSlug" value="squares-of-a-sorted-array" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/[面试题 02.07]链表相交.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/doc/content/[面试题 02.07]链表相交.md" />
+              <option name="frontendQuestionId" value="leetcode.cn面试题 02.07" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/[面试题 02.07]链表相交.py" />
+              <option name="titleSlug" value="intersection-of-two-linked-lists-lcci" />
             </LeetcodeEditor>
           </value>
         </entry>

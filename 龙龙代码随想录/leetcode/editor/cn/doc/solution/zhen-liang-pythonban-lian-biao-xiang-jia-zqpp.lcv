@@ -1,0 +1,73 @@
+> Problem: [面试题 02.07. 链表相交](https://leetcode.cn/problems/intersection-of-two-linked-lists-lcci/description/)
+
+[TOC]
+
+# 思路
+
+> 一开始，我也没什么思路，但是细细研究发现，我们可以求出每个链表的长度，然后使用cur从长的链表的head移到abs（lenA-lenB）处，然后一个个结点进行比对。
+
+# 解题方法
+
+> 先使用cur遍历两个链表，求出去长度，然后比较长度，选出大者，并计算出差值
+
+# 复杂度
+
+- 时间复杂度:
+
+- 空间复杂度:
+
+# Code
+
+* []
+
+```Python
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
+        sizeA = 0
+        sizeB = 0
+        curA = headA
+        curB = headB
+        while(curA):
+            curA = curA.next
+            sizeA += 1
+        while(curB):
+            curB = curB.next
+            sizeB += 1
+        curA,curB = headA,headB
+        if sizeA>sizeB:
+            for _ in range(sizeA-sizeB):
+                curA = curA.next
+            while(curA):
+                if curA == curB:
+                    return curA
+                else:
+                    curA = curA.next
+                    curB = curB.next
+        if sizeA<sizeB:
+            for _ in range(sizeB-sizeA):
+                curB = curB.next
+            while(curB):
+                if curB == curA:
+                    return curB
+                else:
+                    curA = curA.next
+                    curB = curB.next
+        if sizeA==sizeB:
+            while(curA):
+                if curA == curB:
+                    return curA
+                else:
+                    curA = curA.next
+                    curB = curB.next
+        return None
+
+        
+```
+

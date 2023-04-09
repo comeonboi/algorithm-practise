@@ -1,0 +1,55 @@
+**解题思路：**
+先计算两个链表的长度，让curA为最长链表的头，计算长度差，最后遍历两个链表。
+
+* 
+
+```
+public class Solution {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        ListNode curA = headA; // 链表A当前位置
+        ListNode curB = headB; // 链表B当前位置
+        int lenA = 0; // 链表A的长度 
+        int lenB = 0; // 链表B的长度
+        // 计算A链表的长度
+        while (curA != null) {
+            lenA++;
+            curA = curA.next;
+        }
+        // 计算B链表的长度
+        while (curB != null) {
+            lenB++;
+            curB = curB.next;
+        }
+        curA = headA;
+        curB = headB;
+        // 让curA为最长链表的头，lenA为其长度
+        if (lenB > lenA) {
+            int tmpLen = lenA;
+            lenA = lenB;
+            lenB = tmpLen;
+            ListNode tmpNode = curA;
+            curA = curB;
+            curB = tmpNode;
+        }
+        // 长度差
+        int gap = lenA - lenB;
+        // 让curA和curB在同一起点上（末尾位置对齐）
+        while (gap-- > 0) {
+            curA = curA.next;
+        }
+        // 遍历curA 和 curB，遇到相同则直接返回
+        while (curA != null) {
+            if (curA == curB) {
+                return curA;
+            }
+            curA = curA.next;
+            curB = curB.next;
+        }
+        return null;
+    }
+}
+```
+
+**复杂度分析：**
+时间复杂度：O(m+n)
+空间复杂度：O(1)
