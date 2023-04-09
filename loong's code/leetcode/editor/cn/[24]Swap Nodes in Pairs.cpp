@@ -33,7 +33,13 @@
 
 <div><div>Related Topics</div><div><li>递归</li><li>链表</li></div></div><br><div><li>👍 1787</li><li>👎 0</li></div>
 */
-
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
 //leetcode submit region begin(Prohibit modification and deletion)
 /**
  * Definition for singly-linked list.
@@ -45,10 +51,17 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+
 class Solution {
 public:
     ListNode* swapPairs(ListNode* head) {
-
+        if (head == nullptr or head->next == nullptr){
+            return head;
+        }
+        ListNode *yummyNode = head->next;
+        head->next = swapPairs(yummyNode->next);
+        yummyNode->next = head;
+        return yummyNode;
     }
 };
 //leetcode submit region end(Prohibit modification and deletion)
