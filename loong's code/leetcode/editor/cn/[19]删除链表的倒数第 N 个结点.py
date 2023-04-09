@@ -39,7 +39,7 @@
 
 <p><strong>进阶：</strong>你能尝试使用一趟扫描实现吗？</p>
 
-<div><div>Related Topics</div><div><li>链表</li><li>双指针</li></div></div><br><div><li>👍 2500</li><li>👎 0</li></div>
+<div><div>Related Topics</div><div><li>链表</li><li>双指针</li></div></div><br><div><li>👍 2501</li><li>👎 0</li></div>
 """
 from typing import Optional
 
@@ -50,16 +50,16 @@ class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
+
+
 class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
-        start = ListNode(0)
-        tail = ListNode(0)
+        dummyHead = ListNode(val=0, next=head)
+        head = tail = dummyHead
         for _ in range(n):
             tail = tail.next
-        while tail.next:
-            start = start.next
-            tail = tail.next
-
-
-
+        while tail.next is not None:
+            head, tail = head.next, tail.next
+        head.next = head.next.next
+        return dummyHead.next
 # leetcode submit region end(Prohibit modification and deletion)

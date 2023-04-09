@@ -7,4 +7,4 @@ include_directories(aaf)
 
 add_executable(algorithm_practise
         aaf/qewqwe.cpp
-        aaf/qewqwe.h "loong's code/leetcode/editor/cn/[27]Remove Element.cpp" "loong's code/leetcode/editor/cn/[27]Remove Element.cpp")
+        aaf/qewqwe.h "loong's code/leetcode/editor/cn/[27]Remove Element.cpp" "loong's code/leetcode/editor/cn/[27]Remove Element.cpp" "loong's code/leetcode/editor/cn/[142]Linked List Cycle II.cpp")
