@@ -1,0 +1,51 @@
+### 解题思路
+
+这道题目我乍一眼真看不出来可以用哈希/(ㄒoㄒ)/~~
+回顾了代码随想录笔记，重点！！一定要记住下面这句话：
+**当遇到要快速判断一个元素是否出现集合里的时候-->考虑哈希**
+[代码随想录打卡](https://www.programmercarl.com/0202.%E5%BF%AB%E4%B9%90%E6%95%B0.html)
+![202_fig1.png](https://pic.leetcode.cn/1678864953-JWlAfl-202_fig1.png)
+![202_fig2.png](https://pic.leetcode.cn/1678864979-AaCMBc-202_fig2.png)
+
+#### 题目难点:
+
+1. 看出这题目要用哈希
+2. 判断sum是否重复出现，重复return false，否则一直找到sum==1
+3. 对数值各个位上的单数操作不熟悉也会加大题目难点
+4. 使用哪一种数据结构保存哈希[数组、set(集合)✔、map(映射)]
+
+#### set集合的使用
+
+- set.find(sum)找到集合中是否有sum元素，没有则返回set.end()
+- set.insert(sum)插入sum元素
+
+### 代码
+
+* cpp
+
+```cpp
+//代码随想录
+class Solution {
+public:
+    int getSum(int n){
+        int sum=0;
+        while(n!=0){
+            sum=sum+(n%10)*(n%10);
+            n=n/10;
+        }
+        return sum;
+    }
+    bool isHappy(int n) {
+        unordered_set<int> set;//unordered_set不存放重复元素
+        while(1){
+            int sum=getSum(n);
+            if(sum==1)return true;
+            //如果sum曾出现，说明已经陷入无限循环中，马上false
+            if(set.find(sum)!=set.end())return false;
+             else set.insert(sum);
+            n=sum;
+        }
+    }
+};
+```
+

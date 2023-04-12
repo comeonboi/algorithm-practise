@@ -1,0 +1,15 @@
+class Solution:
+    def isHappy(self, n: int) -> bool:
+        list1 = []
+        ans = n
+        while 1:
+            ans = list(map(int, list(str(ans))))
+            ans = sum(map(lambda x: x ** 2, ans))
+            if ans == 1:
+                return True
+            if ans not in list1:
+                list1.append(ans)
+            else:
+                return False
+# runtime:40 ms
+# memory:15.1 MB
