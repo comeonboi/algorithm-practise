@@ -113,6 +113,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[151]反转字符串中的单词.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[151]反转字符串中的单词.md" />
+              <option name="frontendQuestionId" value="leetcode.cn151" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[151]反转字符串中的单词.py" />
+              <option name="titleSlug" value="reverse-words-in-a-string" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[15]三数之和.py">
           <value>
             <LeetcodeEditor>
@@ -176,6 +187,17 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[202]Happy Number.cpp" />
               <option name="titleSlug" value="happy-number" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[2404]出现最频繁的偶数元素.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[2404]出现最频繁的偶数元素.md" />
+              <option name="frontendQuestionId" value="leetcode.cn2404" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[2404]出现最频繁的偶数元素.py" />
+              <option name="titleSlug" value="most-frequent-even-element" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -267,6 +289,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[541]反转字符串 II.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[541]反转字符串 II.md" />
+              <option name="frontendQuestionId" value="leetcode.cn541" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[541]反转字符串 II.py" />
+              <option name="titleSlug" value="reverse-string-ii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[704]二分查找.cpp">
           <value>
             <LeetcodeEditor>
@@ -275,6 +308,28 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[704]二分查找.cpp" />
               <option name="titleSlug" value="binary-search" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[剑指 Offer 05]替换空格.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[剑指 Offer 05]替换空格.md" />
+              <option name="frontendQuestionId" value="leetcode.cn剑指 Offer 05" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[剑指 Offer 05]替换空格.py" />
+              <option name="titleSlug" value="ti-huan-kong-ge-lcof" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[剑指 Offer 58 - II]左旋转字符串.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[剑指 Offer 58 - II]左旋转字符串.md" />
+              <option name="frontendQuestionId" value="leetcode.cn剑指 Offer 58 - II" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[剑指 Offer 58 - II]左旋转字符串.py" />
+              <option name="titleSlug" value="zuo-xuan-zhuan-zi-fu-chuan-lcof" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -308,6 +363,17 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[142]Linked List Cycle II.cpp" />
               <option name="titleSlug" value="linked-list-cycle-ii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/[18]四数之和.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/doc/content/[18]四数之和.md" />
+              <option name="frontendQuestionId" value="leetcode.cn18" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/[18]四数之和.py" />
+              <option name="titleSlug" value="4sum" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -396,6 +462,28 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[24]Swap Nodes in Pairs.cpp" />
               <option name="titleSlug" value="swap-nodes-in-pairs" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/[344]反转字符串.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/doc/content/[344]反转字符串.md" />
+              <option name="frontendQuestionId" value="leetcode.cn344" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/[344]反转字符串.py" />
+              <option name="titleSlug" value="reverse-string" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/[541]反转字符串 II.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[541]反转字符串 II.md" />
+              <option name="frontendQuestionId" value="leetcode.cn541" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[541]反转字符串 II.py" />
+              <option name="titleSlug" value="reverse-string-ii" />
             </LeetcodeEditor>
           </value>
         </entry>
