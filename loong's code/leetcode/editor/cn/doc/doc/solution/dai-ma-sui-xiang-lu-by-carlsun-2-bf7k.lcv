@@ -1,0 +1,598 @@
+![哈希表：6.四数之和1.jpg](https://pic.leetcode-cn.com/1658751067-ERwTZl-%E5%93%88%E5%B8%8C%E8%A1%A8%EF%BC%9A6.%E5%9B%9B%E6%95%B0%E4%B9%8B%E5%92%8C1.jpg)
+
+针对本题，我录制了视频讲解：[难在去重和剪枝！| LeetCode：18. 四数之和](https://www.bilibili.com/video/BV1DS4y147US)，结合本题解一起看，事半功倍！
+
+# 思路
+
+四数之和，和[15.三数之和](https://programmercarl.com/0015.三数之和.html)是一个思路，都是使用双指针法, 基本解法就是在[15.三数之和](https://programmercarl.com/0015.三数之和.html) 的基础上再套一层for循环。
+
+但是有一些细节需要注意，例如： 不要判断`nums[k] > target` 就返回了，三数之和 可以通过 `nums[i] > 0` 就返回了，因为 0 已经是确定的数了，四数之和这道题目 target是任意值。比如：数组是`[-4, -3, -2, -1]`，`target`是`-10`，不能因为`-4 > -10`而跳过。但是我们依旧可以去做剪枝，逻辑变成`nums[i] > target && (nums[i] >=0 || target >= 0)`就可以了。
+
+[15.三数之和](https://programmercarl.com/0015.三数之和.html)的双指针解法是一层for循环num[i]为确定值，然后循环内有left和right下标作为双指针，找到nums[i] + nums[left] + nums[right] == 0。
+
+四数之和的双指针解法是两层for循环nums[k] + nums[i]为确定值，依然是循环内有left和right下标作为双指针，找出nums[k] + nums[i] + nums[left] + nums[right] == target的情况，三数之和的时间复杂度是O(n^2)，四数之和的时间复杂度是O(n^3) 。
+
+那么一样的道理，五数之和、六数之和等等都采用这种解法。
+
+对于[15.三数之和](https://programmercarl.com/0015.三数之和.html)双指针法就是将原本暴力O(n^3)的解法，降为O(n^2)的解法，四数之和的双指针解法就是将原本暴力O(n^4)的解法，降为O(n^3)的解法。
+
+之前我们讲过哈希表的经典题目：[454.四数相加II](https://programmercarl.com/0454.四数相加II.html)，相对于本题简单很多，因为本题是要求在一个集合中找出四个数相加等于target，同时四元组不能重复。
+
+而[454.四数相加II](https://programmercarl.com/0454.四数相加II.html)是四个独立的数组，只要找到A[i] + B[j] + C[k] + D[l] = 0就可以，不用考虑有重复的四个元素相加等于0的情况，所以相对于本题还是简单了不少！
+
+我们来回顾一下，几道题目使用了双指针法。
+
+双指针法将时间复杂度：O(n^2)的解法优化为 O(n)的解法。也就是降一个数量级，题目如下：
+
+* [27.移除元素](https://programmercarl.com/0027.移除元素.html)
+* [15.三数之和](https://programmercarl.com/0015.三数之和.html)
+* [18.四数之和](https://programmercarl.com/0018.四数之和.html)
+
+链表相关双指针题目：
+
+* [206.反转链表](https://programmercarl.com/0206.翻转链表.html)
+* [19.删除链表的倒数第N个节点](https://programmercarl.com/0019.删除链表的倒数第N个节点.html)
+* [面试题 02.07. 链表相交](https://programmercarl.com/面试题02.07.链表相交.html)
+* [142题.环形链表II](https://programmercarl.com/0142.环形链表II.html)
+
+双指针法在字符串题目中还有很多应用，后面还会介绍到。
+
+C++代码
+
+* CPP
+
+```CPP
+class Solution {
+public:
+    vector<vector<int>> fourSum(vector<int>& nums, int target) {
+        vector<vector<int>> result;
+        sort(nums.begin(), nums.end());
+        for (int k = 0; k < nums.size(); k++) {
+            // 剪枝处理
+            if (nums[k] > target && nums[k] >= 0) {
+            	break; // 这里使用break，统一通过最后的return返回
+            }
+            // 对nums[k]去重
+            if (k > 0 && nums[k] == nums[k - 1]) {
+                continue;
+            }
+            for (int i = k + 1; i < nums.size(); i++) {
+                // 2级剪枝处理
+                if (nums[k] + nums[i] > target && nums[k] + nums[i] >= 0) {
+                    break;
+                }
+
+                // 对nums[i]去重
+                if (i > k + 1 && nums[i] == nums[i - 1]) {
+                    continue;
+                }
+                int left = i + 1;
+                int right = nums.size() - 1;
+                while (right > left) {
+                    // nums[k] + nums[i] + nums[left] + nums[right] > target 会溢出
+                    if ((long) nums[k] + nums[i] + nums[left] + nums[right] > target) {
+                        right--;
+                    // nums[k] + nums[i] + nums[left] + nums[right] < target 会溢出
+                    } else if ((long) nums[k] + nums[i] + nums[left] + nums[right]  < target) {
+                        left++;
+                    } else {
+                        result.push_back(vector<int>{nums[k], nums[i], nums[left], nums[right]});
+                        // 对nums[left]和nums[right]去重
+                        while (right > left && nums[right] == nums[right - 1]) right--;
+                        while (right > left && nums[left] == nums[left + 1]) left++;
+
+                        // 找到答案时，双指针同时收缩
+                        right--;
+                        left++;
+                    }
+                }
+
+            }
+        }
+        return result;
+    }
+};
+
+
+```
+
+## 其他语言版本
+
+* []
+
+```Java
+class Solution {
+    public List<List<Integer>> fourSum(int[] nums, int target) {
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(nums);
+       
+        for (int i = 0; i < nums.length; i++) {
+
+            // nums[i] > target 直接返回, 剪枝操作
+            if (nums[i] > 0 && nums[i] > target) {
+                return result;
+            }
+
+            if (i > 0 && nums[i - 1] == nums[i]) {
+                continue;
+            }
+            
+            for (int j = i + 1; j < nums.length; j++) {
+
+                if (j > i + 1 && nums[j - 1] == nums[j]) {
+                    continue;
+                }
+
+                int left = j + 1;
+                int right = nums.length - 1;
+                while (right > left) {
+                    long sum = (long) nums[i] + nums[j] + nums[left] + nums[right];
+                    if (sum > target) {
+                        right--;
+                    } else if (sum < target) {
+                        left++;
+                    } else {
+                        result.add(Arrays.asList(nums[i], nums[j], nums[left], nums[right]));
+                        
+                        while (right > left && nums[right] == nums[right - 1]) right--;
+                        while (right > left && nums[left] == nums[left + 1]) left++;
+
+                        left++;
+                        right--;
+                    }
+                }
+            }
+        }
+        return result;
+    }
+}
+```
+
+* []
+
+```python
+# 双指针法
+class Solution:
+    def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
+        
+        nums.sort()
+        n = len(nums)
+        res = []
+        for i in range(n):
+            if i > 0 and nums[i] == nums[i - 1]: continue
+            for k in range(i+1, n):
+                if k > i + 1 and nums[k] == nums[k-1]: continue
+                p = k + 1
+                q = n - 1
+
+                while p < q:
+                    if nums[i] + nums[k] + nums[p] + nums[q] > target: q -= 1
+                    elif nums[i] + nums[k] + nums[p] + nums[q] < target: p += 1
+                    else:
+                        res.append([nums[i], nums[k], nums[p], nums[q]])
+                        while p < q and nums[p] == nums[p + 1]: p += 1
+                        while p < q and nums[q] == nums[q - 1]: q -= 1
+                        p += 1
+                        q -= 1
+        return res
+
+# 哈希表法
+class Solution(object):
+    def fourSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[List[int]]
+        """
+        # use a dict to store value:showtimes
+        hashmap = dict()
+        for n in nums:
+            if n in hashmap:
+                hashmap[n] += 1
+            else: 
+                hashmap[n] = 1
+        
+        # good thing about using python is you can use set to drop duplicates.
+        ans = set()
+        # ans = []  # save results by list()
+        for i in range(len(nums)):
+            for j in range(i + 1, len(nums)):
+                for k in range(j + 1, len(nums)):
+                    val = target - (nums[i] + nums[j] + nums[k])
+                    if val in hashmap:
+                        # make sure no duplicates.
+                        count = (nums[i] == val) + (nums[j] == val) + (nums[k] == val)
+                        if hashmap[val] > count:
+                          ans_tmp = tuple(sorted([nums[i], nums[j], nums[k], val]))
+                          ans.add(ans_tmp)
+                          # Avoiding duplication in list manner but it cause time complexity increases
+                          # if ans_tmp not in ans:  
+                          #     ans.append(ans_tmp)
+                        else:
+                            continue
+        return list(ans) 
+        # if used list() to save results, just 
+        # return ans
+        
+```
+
+* []
+
+```go
+func fourSum(nums []int, target int) [][]int {
+	if len(nums) < 4 {
+		return nil
+	}
+	sort.Ints(nums)
+	var res [][]int
+	for i := 0; i < len(nums)-3; i++ {
+		n1 := nums[i]
+		// if n1 > target { // 不能这样写,因为可能是负数
+		// 	break
+		// }
+		if i > 0 && n1 == nums[i-1] {
+			continue
+		}
+		for j := i + 1; j < len(nums)-2; j++ {
+			n2 := nums[j]
+			if j > i+1 && n2 == nums[j-1] {
+				continue
+			}
+			l := j + 1
+			r := len(nums) - 1
+			for l < r {
+				n3 := nums[l]
+				n4 := nums[r]
+				sum := n1 + n2 + n3 + n4
+				if sum < target {
+					l++
+				} else if sum > target {
+					r--
+				} else {
+					res = append(res, []int{n1, n2, n3, n4})
+					for l < r && n3 == nums[l+1] { // 去重
+						l++
+					}
+					for l < r && n4 == nums[r-1] { // 去重
+						r--
+					}
+					// 找到答案时,双指针同时靠近
+					r--
+					l++
+				}
+			}
+		}
+	}
+	return res
+}
+```
+
+* []
+
+```js
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[][]}
+ */
+var fourSum = function(nums, target) {
+    const len = nums.length;
+    if(len < 4) return [];
+    nums.sort((a, b) => a - b);
+    const res = [];
+    for(let i = 0; i < len - 3; i++) {
+        // 去重i
+        if(i > 0 && nums[i] === nums[i - 1]) continue;
+        for(let j = i + 1; j < len - 2; j++) {
+            // 去重j
+            if(j > i + 1 && nums[j] === nums[j - 1]) continue;
+            let l = j + 1, r = len - 1;
+            while(l < r) {
+                const sum = nums[i] + nums[j] + nums[l] + nums[r];
+                if(sum < target) { l++; continue}
+                if(sum > target) { r--; continue}
+                res.push([nums[i], nums[j], nums[l], nums[r]]);
+                while(l < r && nums[l] === nums[++l]);
+                while(l < r && nums[r] === nums[--r]);
+            }
+        } 
+    }
+    return res;
+};
+```
+
+* []
+
+```typescript
+function fourSum(nums: number[], target: number): number[][] {
+    nums.sort((a, b) => a - b);
+    let first: number = 0,
+        second: number,
+        third: number,
+        fourth: number;
+    let length: number = nums.length;
+    let resArr: number[][] = [];
+    for (; first < length; first++) {
+        if (first > 0 && nums[first] === nums[first - 1]) {
+            continue;
+        }
+        for (second = first + 1; second < length; second++) {
+            if ((second - first) > 1 && nums[second] === nums[second - 1]) {
+                continue;
+            }
+            third = second + 1;
+            fourth = length - 1;
+            while (third < fourth) {
+                let total: number = nums[first] + nums[second] + nums[third] + nums[fourth];
+                if (total === target) {
+                    resArr.push([nums[first], nums[second], nums[third], nums[fourth]]);
+                    third++;
+                    fourth--;
+                    while (nums[third] === nums[third - 1]) third++;
+                    while (nums[fourth] === nums[fourth + 1]) fourth--;
+                } else if (total < target) {
+                    third++;
+                } else {
+                    fourth--;
+                }
+            }
+        }
+    }
+    return resArr;
+};
+```
+
+* []
+
+```php
+class Solution {
+    /**
+     * @param Integer[] $nums
+     * @param Integer $target
+     * @return Integer[][]
+     */
+    function fourSum($nums, $target) {
+        $res = [];
+        sort($nums);
+        for ($i = 0; $i < count($nums); $i++) {
+            if ($i > 0 && $nums[$i] == $nums[$i - 1]) {
+                continue;
+            }
+            for ($j = $i + 1; $j < count($nums); $j++) {
+                if ($j > $i + 1 && $nums[$j] == $nums[$j - 1]) {
+                    continue;
+                }
+                $left = $j + 1;
+                $right = count($nums) - 1;
+                while ($left < $right) {
+                    $sum = $nums[$i] + $nums[$j] + $nums[$left] + $nums[$right];
+                    if ($sum < $target) {
+                        $left++;
+                    }
+                    else if ($sum > $target) {
+                        $right--;
+                    }
+                    else {
+                        $res[] = [$nums[$i], $nums[$j], $nums[$left], $nums[$right]];
+                        while ($left < $right && $nums[$left] == $nums[$left+1]) $left++;
+                        while ($left < $right && $nums[$right] == $nums[$right-1]) $right--;
+                        $left++;
+                        $right--;
+                    }
+                }
+            }
+        }
+        return $res;
+    }
+}
+```
+
+* []
+
+```swift
+func fourSum(_ nums: [Int], _ target: Int) -> [[Int]] {
+    var res = [[Int]]()
+    var sorted = nums
+    sorted.sort()
+    for k in 0 ..< sorted.count {
+        // 这种剪枝不行,target可能是负数
+//            if sorted[k] > target {
+//                return res
+//            }
+        // 去重
+        if k > 0 && sorted[k] == sorted[k - 1] {
+            continue
+        }
+        
+        let target2 = target - sorted[k]
+        for i in (k + 1) ..< sorted.count {
+            if i > (k + 1) && sorted[i] == sorted[i - 1] {
+                continue
+            }
+            var left = i + 1
+            var right = sorted.count - 1
+            while left < right {
+                let sum = sorted[i] + sorted[left] + sorted[right]
+                if sum < target2 {
+                    left += 1
+                } else if sum > target2 {
+                    right -= 1
+                } else {
+                    res.append([sorted[k], sorted[i], sorted[left], sorted[right]])
+                    while left < right && sorted[left] == sorted[left + 1] {
+                        left += 1
+                    }
+                    while left < right && sorted[right] == sorted[right - 1]  {
+                        right -= 1
+                    }
+                    // 找到答案 双指针同时收缩
+                    left += 1
+                    right -= 1
+                }
+            }
+        }
+    }
+    return res
+}
+```
+
+* []
+
+```csharp
+public class Solution
+{
+    public IList<IList<int>> FourSum(int[] nums, int target)
+    {
+        var result = new List<IList<int>>();
+
+        Array.Sort(nums);
+
+        for (int i = 0; i < nums.Length - 3; i++)
+        {
+            int n1 = nums[i];
+            if (i > 0 && n1 == nums[i - 1])
+                continue;
+
+            for (int j = i + 1; j < nums.Length - 2; j++)
+            {
+                int n2 = nums[j];
+                if (j > i + 1 && n2 == nums[j - 1])
+                    continue;
+
+                int left = j + 1;
+                int right = nums.Length - 1;
+
+                while (left < right)
+                {
+                    int n3 = nums[left];
+                    int n4 = nums[right];
+                    int sum = n1 + n2 + n3 + n4;
+
+                    if (sum > target)
+                    {
+                        right--;
+                    }
+                    else if (sum < target)
+                    {
+                        left++;
+                    }
+                    else
+                    {
+                        result.Add(new List<int> { n1, n2, n3, n4 });
+
+                        while (left < right && nums[left] == n3)
+                        {
+                            left++;
+                        }
+
+                        while (left < right && nums[right] == n4)
+                        {
+                            right--;
+                        }
+                    }
+                }
+            }
+        }
+
+        return result;
+    }
+}
+```
+
+* []
+
+```Rust
+impl Solution {
+    pub fn four_sum(nums: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
+        let mut result: Vec<Vec<i32>> = Vec::new();
+        let mut nums = nums;
+        nums.sort();
+        let len = nums.len();
+        for k in 0..len {
+            // 剪枝
+            if nums[k] > target && (nums[k] > 0 || target > 0) { break; }
+            // 去重
+            if k > 0 && nums[k] == nums[k - 1] { continue; }
+            for i in (k + 1)..len {
+                // 剪枝
+                if nums[k] + nums[i] > target && (nums[k] + nums[i] >= 0 || target >= 0) { break; }
+                // 去重
+                if i > k + 1 && nums[i] == nums[i - 1] { continue; }
+                let (mut left, mut right) = (i + 1, len - 1);
+                while left < right {
+                    if nums[k] + nums[i] > target - (nums[left] + nums[right]) {
+                        right -= 1;
+                        // 去重
+                        while left < right && nums[right] == nums[right + 1] { right -= 1; }
+                    } else if nums[k] + nums[i] < target - (nums[left] + nums[right]) {
+                        left += 1;
+                        // 去重
+                        while left < right && nums[left] == nums[left - 1] { left += 1; }
+                    } else {
+                        result.push(vec![nums[k], nums[i], nums[left], nums[right]]);
+                        // 去重
+                        while left < right && nums[right] == nums[right - 1] { right -= 1; }
+                        while left < right && nums[left] == nums[left + 1] { left += 1; }
+                        left += 1;
+                        right -= 1;
+                    }
+                }
+            }
+        }
+        result
+    }
+}
+```
+
+* []
+
+```scala
+object Solution {
+  // 导包
+  import scala.collection.mutable.ListBuffer
+  import scala.util.control.Breaks.{break, breakable}
+  def fourSum(nums: Array[Int], target: Int): List[List[Int]] = {
+    val res = ListBuffer[List[Int]]()
+    val nums_tmp = nums.sorted // 先排序
+    for (i <- nums_tmp.indices) {
+      breakable {
+        if (i > 0 && nums_tmp(i) == nums_tmp(i - 1)) {
+          break // 如果该值和上次的值相同，跳过本次循环，相当于continue
+        } else {
+          for (j <- i + 1 until nums_tmp.length) {
+            breakable {
+              if (j > i + 1 && nums_tmp(j) == nums_tmp(j - 1)) {
+                break // 同上
+              } else {
+                // 双指针
+                var (left, right) = (j + 1, nums_tmp.length - 1)
+                while (left < right) {
+                  var sum = nums_tmp(i) + nums_tmp(j) + nums_tmp(left) + nums_tmp(right)
+                  if (sum == target) {
+                    // 满足要求，直接加入到集合里面去
+                    res += List(nums_tmp(i), nums_tmp(j), nums_tmp(left), nums_tmp(right))
+                    while (left < right && nums_tmp(left) == nums_tmp(left + 1)) left += 1
+                    while (left < right && nums_tmp(right) == nums_tmp(right - 1)) right -= 1
+                    left += 1
+                    right -= 1
+                  } else if (sum < target) left += 1
+                  else right -= 1
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    // 最终返回的res要转换为List，return关键字可以省略
+    res.toList
+  }
+}
+```
+
+-----------
+
+大家好，我是程序员Carl，如果你刷题很迷茫，**建议按照[代码随想录](https://programmercarl.com)的顺序刷题**，你会发现相见恨晚！
+
+**如果感觉题解对你有帮助，不要吝啬给一个👍吧！**
+
