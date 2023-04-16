@@ -47,4 +47,13 @@
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
     def isValid(self, s: str) -> bool:
+        stack = ["?"]
+
+        dic = {'{': '}', '[': ']', '(': ')', '?': '?'}
+        for i in s:
+            if i in dic:
+                stack.append(i)
+            elif dic[stack.pop()] != i:
+                return False
+        return len(stack) == 1
 # leetcode submit region end(Prohibit modification and deletion)
