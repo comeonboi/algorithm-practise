@@ -1,6 +1,6 @@
 # LeetCode Solutions
 
-![GitHub last commit](https://img.shields.io/github/last-commit/comeonboi/leetcode-solutions) [![GitHub issues](https://img.shields.io/github/issues-raw/comeonboi/leetcode-solutions)](https://github.com/comeonboi/leetcode-solutions/issues) [![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/comeonboi/leetcode-solutions)](https://github.com/comeonboi/leetcode-solutions/pulls) [![GitHub contributors](https://img.shields.io/github/contributors/comeonboi/leetcode-solutions)](https://github.com/comeonboi/leetcode-solutions/graphs/contributors)
+![GitHub last commit](https://img.shields.io/github/last-commit/comeonboi/algorithm-practise) [![GitHub issues](https://img.shields.io/github/issues-raw/comeonboi/algorithm-practise)](https://github.com/comeonboi/algorithm-practise/issues) [![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/comeonboi/algorithm-practise)](https://github.com/comeonboi/algorithm-practise/pulls) [![GitHub contributors](https://img.shields.io/github/contributors/comeonboi/algorithm-practise)](https://github.com/comeonboi/algorithm-practise/graphs/contributors)
 
 A collection of LeetCode problems and solutions created by 嘿嘿大魔王\ 龙龙 \ Jessica \ Ceither \ Angro.
 
