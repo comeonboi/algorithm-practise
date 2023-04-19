@@ -102,13 +102,24 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[102]Binary Tree Level Order Traversal.cpp">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[102]Binary Tree Level Order Traversal.md" />
+              <option name="frontendQuestionId" value="leetcode.cn102" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[102]Binary Tree Level Order Traversal.cpp" />
+              <option name="titleSlug" value="binary-tree-level-order-traversal" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[102]二叉树的层序遍历.py">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[102]二叉树的层序遍历.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[102]Binary Tree Level Order Traversal.md" />
               <option name="frontendQuestionId" value="leetcode.cn102" />
               <option name="host" value="leetcode.cn" />
-              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[102]二叉树的层序遍历.py" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[102]Binary Tree Level Order Traversal.cpp" />
               <option name="titleSlug" value="binary-tree-level-order-traversal" />
             </LeetcodeEditor>
           </value>
