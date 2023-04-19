@@ -1,0 +1,16 @@
+from itertools import groupby
+import collections
+
+
+class Solution:
+    def minimumMoves(self, s: str) -> int:
+        ans = i = 0
+        while i < len(s):
+            if s[i] == 'X':
+                ans += 1
+                i += 3
+            else:
+                i += 1
+        return ans
+
+print(Solution.minimumMoves(Solution(), s="XX0X"))
