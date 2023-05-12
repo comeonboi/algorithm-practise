@@ -1,0 +1,248 @@
+大家好，我是帅蛋。
+
+今天解决**完全二叉树的节点个数**，我曾经在【[**ACM 选手带你玩转二叉树**](https://mp.weixin.qq.com/s/l8jwYfaUuV5ZjFH8CMNw9A)】文章中说过，完全二叉树比较难理解，它的概念其实分前后两部分：
+
+- **除了最底层以外，其余的每一层节点数都是满的**
+
+这个其实比较好理解，就是去掉最后一层，剩下的是一棵满二叉树。
+
+![image.png](https://pic.leetcode-cn.com/1647825446-DCOBLF-image.png)
+
+- **最底层的节点全集中在该层最左边的位置。**
+
+难理解的也是这句话，最后一层如果是第 k 层，那么这一层最少有 1 个叶子节点，最多有 2^(k-1) 个节点，而这些节点都是从左到右依次排列。
+
+![image.png](https://pic.leetcode-cn.com/1647825454-aWgLwc-image.png)
+
+上面右图不是完全二叉树，因为最后一层没有按照从左到右排列。节点 J 本应该在虚框的位置，但是跳过了。
+
+如果你把上面的概念看懂了，那恭喜你，完全二叉树已经搞不到你了。
+
+下面就让我们赶紧来切了这道题~
+
+![image.png](https://pic.leetcode-cn.com/1647825467-awMcby-image.png)
+
+# LeetCode 222：完全二叉树的节点个数
+
+## 题意
+
+给你一棵完全二叉树的根节点 root，求出该树的节点个数。
+
+## 示例
+
+输入：root = [1,2,3,4,5,6]
+输出：6
+
+![image.png](https://pic.leetcode-cn.com/1647825477-cQjyiJ-image.png)
+
+## 提示
+
+- 树中节点的数目范围是 [0, 5*10^4]
+- 0 <= Node.val <= 5*10^4
+- 题目数据保证输入的树是完全二叉树
+
+# 题目解析
+
+这道题难度中等，正如我在开头所说的，其实不是难在解法上，而是难在对完全二叉树概念的理解上。
+
+完全二叉树说破大天去，它也是二叉树，就可以用求普通二叉树的方法来求。
+
+比如可以使用层次遍历来求，层次遍历就是一层层的遍历，同一层的遍历按照从左到右逐个遍历，在遍历的过程中维护的节点总数即可。
+
+[ACM 选手带你玩转二叉树层次遍历（递归 + 非递归）](https://mp.weixin.qq.com/s/3MMgFtLW9BHpguUkHICLkQ)
+
+也可以参照求【[**二叉树的最大深度**](https://mp.weixin.qq.com/s/4n_L-px-5D2mUkmC62H5Dw)】那样，二叉树的最大深度求左子树的最大深度，右子树的最大深度，二叉树的最大深度 = max(左子树的最大深度, 右子树的最大深度) + 1。
+
+类似，节点个数可以是求左子树的节点个数，求右子树的节点个数，二叉树的节点个数 = 左子树的节点个数 + 右子树的节点个数 + 1。
+
+[**ACM 选手图解 LeetCode 二叉树的最大深度**](https://mp.weixin.qq.com/s/4n_L-px-5D2mUkmC62H5Dw)
+
+在这里我不详细讲上面的方法，毕竟都是已经做过好多次的解法了。这道题既然说的是完全二叉树，那我们就根据完全二叉树的性质求解这道题。
+
+\---
+
+我在文章最开头的时候说过，完全二叉树【除了最底层以外，其余的每一层节点数都是满的】且【最底层的节点全集中在该层最左边的位置】。
+
+那这就很明显的表明，对于一棵完全二叉树来说，左子树的深度必然是 ≥ 右子树的深度的：
+
+- 当左子树的深度等于右子树的深度的时候，左子树必定是满二叉树。
+
+![image.png](https://pic.leetcode-cn.com/1647825497-TtDzDD-image.png)
+
+- 当左子树的深度大于右子树的深度的时候，右子树必定是满二叉树。
+
+![image.png](https://pic.leetcode-cn.com/1647825503-CRHVHL-image.png)
+
+当知道子树是满二叉树的时候，那这棵子树的节点数目就是 **2^k - 1**，其中 k 为子树的深度。
+
+至于不是满二叉树的子树，直接递归即可。
+
+# 图解
+
+以 root = [1,2,3,4,5,6] 为例：
+
+![image.png](https://pic.leetcode-cn.com/1647825512-fNVfCJ-image.png)
+
+其左子树的深度为 leftHeight = 2，右子树的深度 rightHeight = 2。
+
+* Python
+
+```Python
+# 求二叉树的深度
+    def height(self, root:TreeNode):
+        height = 0
+        while root:
+            root = root.left
+            height += 1
+
+        return height
+```
+
+左子树的深度 = 右子树的深度，左子树为满二叉树，直接用公式计算其节点数。
+
+即 2^leftHeight - 1 = 2 ^ 2 - 1 = 3。
+
+![image.png](https://pic.leetcode-cn.com/1647825522-GDmfHR-image.png)
+
+至于右子树，就得递归求解。
+
+* Python
+
+```Python
+# 如果左子树的深度 = 右子树的深度，左子树为满二叉树
+# 节点数 = 左子树的深度 + 右子树的深度 + 根节点
+if leftHeight == rightHeight:
+    return (2 ** leftHeight - 1) + self.countNodes(root.right) + 1
+```
+
+右子树的递归求解也是按照上面这一套，对于上面二叉树的右子树而言，右子树的左子树也是个满二叉树。
+
+![image.png](https://pic.leetcode-cn.com/1647825530-eHrCTA-image.png)
+
+# 代码实现
+
+## Python 代码实现
+
+* Python
+
+```Python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    # 求二叉树的深度
+    def height(self, root:TreeNode):
+        height = 0
+        while root:
+            root = root.left
+            height += 1
+
+        return height
+
+    def countNodes(self, root: TreeNode) -> int:
+        # 空树，节点数为 0
+        if root == None:
+            return 0
+        # 求左子树和右子树的深度
+        leftHeight = self.height(root.left)
+        rightHeight = self.height(root.right)
+        
+        # 如果左子树的深度 = 右子树的深度，左子树为满二叉树
+        # 节点数 = 左子树的深度 + 右子树的深度 + 根节点
+        if leftHeight == rightHeight:
+            return (2 ** leftHeight - 1) + self.countNodes(root.right) + 1
+        # 如果左子树的深度 ＞ 右子树的深度，右子树为满二叉树
+        # 节点数 = 左子树的深度 + 右子树的深度 + 根节点
+        else:
+            return (2 ** rightHeight - 1) + self.countNodes(root.left) + 1
+```
+
+## Java 代码实现
+
+* Java
+
+```Java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    // 求二叉树的深度
+    public int height(TreeNode root){
+        int height = 0;
+        while (root != null){
+            root = root.left;
+            height ++;
+        }
+        return height;
+    }
+
+    public int countNodes(TreeNode root) {
+        // 空树，节点数为 0
+        if (root == null){
+            return 0;
+        }
+        // 求左子树和右子树的深度
+        int leftHeight = height(root.left);
+        int rightHeight = height(root.right);
+        // 如果左子树的深度 = 右子树的深度，左子树为满二叉树
+        // 节点数 = 左子树的深度 + 右子树的深度 + 根节点
+        if(leftHeight == rightHeight){
+            return ((1 << leftHeight) - 1) + countNodes(root.right) + 1;
+        }
+        // 如果左子树的深度 ＞ 右子树的深度，右子树为满二叉树
+        // 节点数 = 左子树的深度 + 右子树的深度 + 根节点
+        else{
+            return ((1 << rightHeight) - 1) + countNodes(root.left) + 1;
+        }
+    }
+}
+```
+
+本题解，每次计算满二叉树的时候，计算的其实就是当前树高，即 O(logn)，每次递归调用的都是下一层的子树，总共调用了“树的高度”次，即 O(logn)，所以**时间复杂度为 O(logn) \* O(logn)**。
+
+此外，使用了递归，额外调用了栈空间，所以**空间复杂度为 O(logn)**。
+
+---
+
+**图解完全二叉树的节点个数**到这就结束了~
+
+这道题告诉我们，学会根据数据结构的性质去解题是很重要的，你看，用了完全二叉树的性质以后，性能都优化了。
+
+还有一点要提醒的是，再好好琢磨琢磨时间复杂度是怎么算出来的，别看完就过去了。
+
+---
+
+## 写在最后
+
+**如果你觉得有帮助到你，请给题解点个赞和收藏，让更多的人看到呀**
+
+也欢迎你点击[**关注我**](https://cdn.codegoudan.com/img/gzgzhbcwqlgd0-1.png)，解锁更多图解 LeetCode，一起玩转数据结构与算法！
+
+我是帅蛋，我们下次见！
+
+<br />
+
+[**推荐阅读** 👍：ACM 选手带你玩转二叉树](https://mp.weixin.qq.com/s/l8jwYfaUuV5ZjFH8CMNw9A)
+
+[**推荐阅读** 👍：ACM 选手图解 LeetCode 二叉树的最小深度](https://mp.weixin.qq.com/s/2CN-pojtouj_Bl53Og8RfQ)
+
+[**推荐阅读** 👍：ACM 选手图解 LeetCode 二叉树的最大深度](https://mp.weixin.qq.com/s/4n_L-px-5D2mUkmC62H5Dw)
+
+[**推荐阅读** 👍：ACM 选手图解 LeetCode N 叉树的最大深度](https://mp.weixin.qq.com/s/JcNYsiQ5xsBiX69vgEWWuQ)
+
+[**推荐阅读** 👍：ACM 选手带你玩转时间复杂度和空间复杂度](https://mp.weixin.qq.com/s/Q3LUNACtC8G-x4EMtPGRHA)
