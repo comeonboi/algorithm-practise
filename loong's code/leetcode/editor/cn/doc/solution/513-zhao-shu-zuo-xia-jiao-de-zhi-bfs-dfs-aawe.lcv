@@ -1,0 +1,121 @@
+> [513. 找树左下角的值](https://leetcode-cn.com/problems/find-bottom-left-tree-value/)
+
+### 思路一：BFS
+
+1. 用队列存储节点，先进先出
+2. 从右往左遍历，也就是在往队列中添加数据时，先添加右子节点，再添加左子节点
+3. 当队列为空时，循环结束，最后一个遍历到的节点就是最左边的节点
+4. 返回最左边节点的值
+
+### 代码
+
+* []
+
+```java
+class Solution {
+    public int findBottomLeftValue(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        TreeNode node = null;
+        while(!queue.isEmpty()){
+            node = queue.poll();
+            // 先右后左
+            if(node.right != null){
+                queue.offer(node.right);
+            }
+            if(node.left != null){
+                queue.offer(node.left);
+            }
+        }
+        return node.val;
+    }
+}
+```
+
+* []
+
+```python
+class Solution:
+    def findBottomLeftValue(self, root: TreeNode) -> int:
+        queue = collections.deque([root])
+        while queue:
+            node = queue.popleft()
+            # 先右后左
+            if node.right: 
+                queue.append(node.right)
+            if node. left:
+                queue.append(node.left)
+        return node.val
+```
+
+**复杂度分析**
+- 时间复杂度：O(n)
+- 空间复杂度：O(width)
+
+***
+
+### 思路二：DFS
+
+1. 只有叶子节点可能是需要的返回值res，所以递归的中止条件为当遇到叶子节点才return
+2. 只有当前叶子节点的深度比之前的更大，才更新res
+   `PS：因为要大于才会更新，所以每一层只会更新一次，先会遍历到左边的节点，所以只会更新每层最左侧的节点，符合题目要求`
+   因为要比较深度，在递归中除了节点作为参数外，还需要增加深度参数
+   在res中增加一项专门用于存储深度， 即 res = [叶子节点值，叶子节点深度]
+3. 最后返回的是res[0]
+
+### 代码
+
+* []
+
+```java
+class Solution {
+    private int[] res;
+    public int findBottomLeftValue(TreeNode root) {
+        res = new int[]{0, -1};
+        dfs(root, 0);
+        return res[0];
+    }
+
+    private void dfs(TreeNode node, int level){
+        if(node.left == null && node.right == null){
+            if(level > res[1]){
+                res[0] = node.val;
+                res[1] = level;
+            }
+            return;
+        }
+        if(node.left != null){
+            dfs(node.left, level + 1);
+        }
+        if(node.right != null){
+            dfs(node.right, level + 1);
+        }
+    }
+}
+```
+
+* []
+
+```python
+class Solution:
+    def findBottomLeftValue(self, root: TreeNode) -> int:
+        def dfs(node, level):
+            if not node.left and not node.right:
+                if level > res[1]:
+                    res[0] = node.val
+                    res[1] = level
+                return
+            if node.left:
+                dfs(node.left, level + 1)
+            if node.right:
+                dfs(node.right, level + 1)
+        
+        res = [0, -1]
+        dfs(root, 0)
+        return res[0]
+```
+
+**复杂度分析**
+- 时间复杂度：O(n)
+- 空间复杂度：O(height)
+
