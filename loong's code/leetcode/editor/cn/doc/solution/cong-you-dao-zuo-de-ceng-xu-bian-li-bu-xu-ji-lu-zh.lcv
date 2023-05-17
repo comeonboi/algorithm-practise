@@ -1,0 +1,32 @@
+### 解题思路
+
+一般的层序遍历是每层从左到右，遍历到最后的元素就是右下角元素。
+如果反过来，每层从右到左进行层序遍历，最后一个就是左下角元素，直接输出即可，不需要记录深度。
+
+### 代码
+
+* python3
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution:
+    def findBottomLeftValue(self, root: TreeNode) -> int:
+        if not root:
+            return -1
+        queue = collections.deque()
+        queue.append(root)
+        while queue:
+            cur = queue.popleft()
+            if cur.right:   # 先右
+                queue.append(cur.right)
+            if cur.left:    # 后左
+                queue.append(cur.left)
+        return cur.val
+```
+
