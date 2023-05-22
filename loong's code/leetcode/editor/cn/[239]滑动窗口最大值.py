@@ -40,6 +40,7 @@
 
 <div><div>Related Topics</div><div><li>队列</li><li>数组</li><li>滑动窗口</li><li>单调队列</li><li>堆（优先队列）</li></div></div><br><div><li>👍 2248</li><li>👎 0</li></div>
 """
+import heapq
 from typing import List
 
 
@@ -50,7 +51,7 @@ class Solution:
         ans = []
         queue = []  # 维护一个单调递减队列，队首元素为当前窗口的最大值
         for i in range(n):
-            if i >= k and queue[0] == nums[i-k]:
+            if i >= k and queue[0] == nums[i - k]:
                 queue.pop(0)  # 窗口向右移动一位，弹出队首元素
             while queue and queue[-1] < nums[i]:
                 queue.pop()  # 弹出队列中比新元素小的元素
@@ -59,5 +60,18 @@ class Solution:
                 ans.append(queue[0])  # 将队列的第一个元素作为当前窗口的最大值
         return ans
 
+    def maxSlidingWindow2(self, nums: List[int], k: int) -> List[int]:
+        n = len(nums)
+        queue = [(-nums[i], i) for i in range(k)]
+        heapq.heapify(queue)
+
+        ans = [-queue[0][0]]
+        for i in range(k, n):
+            heapq.heappush(queue, (-nums[i], i))
+            while queue[0][1] <= i - k:
+                heapq.heappop(queue)
+            ans.append(-queue[0][0])
+        return ans
+
 # leetcode submit region end(Prohibit modification and deletion)
-print(Solution().maxSlidingWindow(nums = [1,3,-1,-3,5,3,6,7], k = 3))
+print(Solution().maxSlidingWindow(nums=[1, 3, -1, -3, 5, 3, 6, 7], k=3))
