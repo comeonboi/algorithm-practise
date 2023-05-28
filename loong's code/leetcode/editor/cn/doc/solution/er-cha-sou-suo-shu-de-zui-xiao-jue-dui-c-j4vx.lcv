@@ -1,0 +1,32 @@
+**解题思路**
+
+二叉搜索树中序遍历,生成有序的数组集合.
+
+然后遍历有序数组,求数组中最小的差值
+
+**代码实现**
+
+* 
+
+```
+    Integer ans=Integer.MAX_VALUE;
+    public int getMinimumDifference(TreeNode root) {
+        List<Integer> list=new ArrayList<>();
+        dfs(root,list);
+        for(int i=1;i<list.size();i++){
+            ans=Math.min(ans,list.get(i)-list.get(i-1));
+        }
+        return ans;
+    }
+    public void dfs(TreeNode root,List<Integer> list){
+        if(root == null)
+            return;
+        dfs(root.left,list);
+        list.add(root.val);
+        dfs(root.right,list);
+    }
+
+```
+
+如果有帮助到你，请给题解点个赞和收藏，让更多的人看到.
+欢迎你 [关注我](https://mp.weixin.qq.com/s/jzWXJ5Gl4AlwWYGFk0K2SQ) 和 加入我们的「组队打卡」小群

@@ -366,13 +366,24 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[501]Find Mode in Binary Search Tree.cpp">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[501]Find Mode in Binary Search Tree.md" />
+              <option name="frontendQuestionId" value="leetcode.cn501" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[501]Find Mode in Binary Search Tree.cpp" />
+              <option name="titleSlug" value="find-mode-in-binary-search-tree" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[501]二叉搜索树中的众数.py">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[501]二叉搜索树中的众数.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[501]Find Mode in Binary Search Tree.md" />
               <option name="frontendQuestionId" value="leetcode.cn501" />
               <option name="host" value="leetcode.cn" />
-              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[501]二叉搜索树中的众数.py" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[501]Find Mode in Binary Search Tree.cpp" />
               <option name="titleSlug" value="find-mode-in-binary-search-tree" />
             </LeetcodeEditor>
           </value>
@@ -388,13 +399,24 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[530]Minimum Absolute Difference in BST.cpp">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[530]Minimum Absolute Difference in BST.md" />
+              <option name="frontendQuestionId" value="leetcode.cn530" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[530]Minimum Absolute Difference in BST.cpp" />
+              <option name="titleSlug" value="minimum-absolute-difference-in-bst" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[530]二叉搜索树的最小绝对差.py">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[530]二叉搜索树的最小绝对差.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[530]Minimum Absolute Difference in BST.md" />
               <option name="frontendQuestionId" value="leetcode.cn530" />
               <option name="host" value="leetcode.cn" />
-              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[530]二叉搜索树的最小绝对差.py" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[530]Minimum Absolute Difference in BST.cpp" />
               <option name="titleSlug" value="minimum-absolute-difference-in-bst" />
             </LeetcodeEditor>
           </value>
