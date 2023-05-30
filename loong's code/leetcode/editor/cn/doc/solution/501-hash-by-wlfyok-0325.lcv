@@ -1,0 +1,36 @@
+### 解题思路
+
+小混一题
+
+### 代码
+
+![image.png](https://pic.leetcode.cn/1684552030-yQpWZI-image.png)
+
+* python3
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def findMode(self, root: Optional[TreeNode]) -> List[int]:
+        dic = {}
+        def dfs(root):
+            if root:
+                if root.val not in dic:
+                    dic[root.val] = 0
+                dic[root.val] += 1
+                dfs(root.left)
+                dfs(root.right)
+        dfs(root)
+        mv = max(dic.values())
+        ans = []
+        for i,v in dic.items():
+            if v == mv:
+                ans.append(i)
+        return ans
+```
+

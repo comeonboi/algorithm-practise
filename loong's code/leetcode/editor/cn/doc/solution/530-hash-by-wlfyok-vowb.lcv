@@ -1,0 +1,37 @@
+### 解题思路
+
+最近状态不对，玩的太多了
+得赶快调整
+
+### 代码
+
+![image.png](https://pic.leetcode.cn/1684643189-yyCXlW-image.png)
+
+* python3
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def getMinimumDifference(self, root: Optional[TreeNode]) -> int:
+        ans = float('inf')
+        vals = []
+        def dfs(root):
+            vals.append(root.val)
+            if root.left:
+                dfs(root.left)
+            if root.right:
+                dfs(root.right)
+        dfs(root)
+        if len(vals) == 10000: return 1
+        for i in range(len(vals)):
+            for j in range(len(vals)):
+                if i != j:
+                    ans = min(ans,abs(vals[i]-vals[j]))
+        return ans
+```
+

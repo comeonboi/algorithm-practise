@@ -1,0 +1,34 @@
+* 
+
+```
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
+        #获取根节点
+        root=TreeNode(preorder[0])
+        #获取根节点两侧左右子树分割点
+        root_index=inorder.index(root.val)
+        #左子树只有一个节点，直接创建，否则递归
+        if root_index==1:
+            root.left=TreeNode(inorder[0])
+        elif root_index>1:
+            #左子树有很多节点，得到左子树的过程可以递归
+            root.left=self.buildTree(preorder[1:1+root_index],inorder[:root_index])
+        #同理，该情况下右子树只有一个节点，直接创建
+        if len(inorder)-root_index==2:
+            root.right=TreeNode(inorder[-1])
+        #递归创建右子树
+        elif len(inorder)-root_index>2:
+            root.right=self.buildTree(preorder[root_index+1:],inorder[root_index+1:])
+        return root
+```
+
+解决该问题，我们首先需要明确二叉树的前序遍历和中序遍历的性质：
+前序遍历：前序遍历首先访问根结点，然后遍历左子树，最后遍历右子树。在遍历左、右子树时，仍然先访问根结点，然后遍历左子树，最后遍历右子树。
+中序遍历：中序遍历首先遍历左子树，然后访问根结点，最后遍历右子树。在遍历左、右子树时，仍然先遍历左子树，然后访问根结点，最后遍历右子树。
+了解了前序遍历的性质，我们可以发现，前序遍历的第一个元素永远是根节点，而中序遍历根节点元素前就是左子树的中序遍历，后面是右子树的中序遍历，这样我们就可以将一个大的二叉树的构造变为无数个只有一个节点的左右子树的构造：即当一个二叉树的左右子树有大于1个节点时，我们就将其分割为更小的二叉树，当一个子树只有一个节点时我们可以直接创建节点，一步步递归，最后得到的就是完整的二叉树。

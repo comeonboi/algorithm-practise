@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "D:/algorithm-practise/loong's code/leetcode/editor/cn/[1019]Next Greater Node In Linked List.cpp" "CMakeFiles/algorithm_practise.dir/loong's_code/leetcode/editor/cn/[1019]Next_Greater_Node_In_Linked_List.cpp.obj" "gcc" "CMakeFiles/algorithm_practise.dir/loong's_code/leetcode/editor/cn/[1019]Next_Greater_Node_In_Linked_List.cpp.obj.d"
-  "D:/algorithm-practise/loong's code/leetcode/editor/cn/[27]Remove Element.cpp" "CMakeFiles/algorithm_practise.dir/loong's_code/leetcode/editor/cn/[27]Remove_Element.cpp.obj" "gcc" "CMakeFiles/algorithm_practise.dir/loong's_code/leetcode/editor/cn/[27]Remove_Element.cpp.obj.d"
-  "D:/algorithm-practise/loong's code/leetcode/editor/cn/main.cpp" "CMakeFiles/algorithm_practise.dir/loong's_code/leetcode/editor/cn/main.cpp.obj" "gcc" "CMakeFiles/algorithm_practise.dir/loong's_code/leetcode/editor/cn/main.cpp.obj.d"
+  "/Users/apple/PycharmProjects/algorithm/loong's code/leetcode/editor/cn/[1019]Next Greater Node In Linked List.cpp" "CMakeFiles/algorithm_practise.dir/loong's_code/leetcode/editor/cn/[1019]Next_Greater_Node_In_Linked_List.cpp.o" "gcc" "CMakeFiles/algorithm_practise.dir/loong's_code/leetcode/editor/cn/[1019]Next_Greater_Node_In_Linked_List.cpp.o.d"
+  "/Users/apple/PycharmProjects/algorithm/loong's code/leetcode/editor/cn/[27]Remove Element.cpp" "CMakeFiles/algorithm_practise.dir/loong's_code/leetcode/editor/cn/[27]Remove_Element.cpp.o" "gcc" "CMakeFiles/algorithm_practise.dir/loong's_code/leetcode/editor/cn/[27]Remove_Element.cpp.o.d"
+  "/Users/apple/PycharmProjects/algorithm/loong's code/leetcode/editor/cn/main.cpp" "CMakeFiles/algorithm_practise.dir/loong's_code/leetcode/editor/cn/main.cpp.o" "gcc" "CMakeFiles/algorithm_practise.dir/loong's_code/leetcode/editor/cn/main.cpp.o.d"
   )
 
 # Targets to which this target links.

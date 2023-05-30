@@ -1,0 +1,486 @@
+![二叉树：21.二叉搜索树最小绝对差.jpg](https://pic.leetcode-cn.com/1664682122-PHihMe-%E4%BA%8C%E5%8F%89%E6%A0%91%EF%BC%9A21.%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E6%9C%80%E5%B0%8F%E7%BB%9D%E5%AF%B9%E5%B7%AE.jpg)
+
+**《代码随想录》算法视频公开课：[二叉搜索树中，需要掌握如何双指针遍历！| LeetCode：530.二叉搜索树的最小绝对差](https://www.bilibili.com/video/BV1DD4y11779)，相信结合视频在看本篇题解，更有助于大家对本题的理解**。
+
+# 思路
+
+题目中要求在二叉搜索树上任意两节点的差的绝对值的最小值。
+
+**注意是二叉搜索树**，二叉搜索树可是有序的。
+
+遇到在二叉搜索树上求什么最值啊，差值之类的，就把它想成在一个有序数组上求最值，求差值，这样就简单多了。
+
+## 递归
+
+那么二叉搜索树采用中序遍历，其实就是一个有序数组。
+
+**在一个有序数组上求两个数最小差值，这是不是就是一道送分题了。**
+
+最直观的想法，就是把二叉搜索树转换成有序数组，然后遍历一遍数组，就统计出来最小差值了。
+
+代码如下：
+
+* CPP
+
+```CPP
+class Solution {
+private:
+vector<int> vec;
+void traversal(TreeNode* root) {
+    if (root == NULL) return;
+    traversal(root->left);
+    vec.push_back(root->val); // 将二叉搜索树转换为有序数组
+    traversal(root->right);
+}
+public:
+    int getMinimumDifference(TreeNode* root) {
+        vec.clear();
+        traversal(root);
+        if (vec.size() < 2) return 0;
+        int result = INT_MAX;
+        for (int i = 1; i < vec.size(); i++) { // 统计有序数组的最小差值
+            result = min(result, vec[i] - vec[i-1]);
+        }
+        return result;
+    }
+};
+```
+
+以上代码是把二叉搜索树转化为有序数组了，其实在二叉搜素树中序遍历的过程中，我们就可以直接计算了。
+
+需要用一个pre节点记录一下cur节点的前一个节点。
+
+如图：
+
+![image.png](https://pic.leetcode-cn.com/1664682107-PUUppb-image.png)
+
+一些同学不知道在递归中如何记录前一个节点的指针，其实实现起来是很简单的，大家只要看过一次，写过一次，就掌握了。
+
+代码如下：
+
+* CPP
+
+```CPP
+class Solution {
+private:
+int result = INT_MAX;
+TreeNode* pre = NULL;
+void traversal(TreeNode* cur) {
+    if (cur == NULL) return;
+    traversal(cur->left);   // 左
+    if (pre != NULL){       // 中
+        result = min(result, cur->val - pre->val);
+    }
+    pre = cur; // 记录前一个
+    traversal(cur->right);  // 右
+}
+public:
+    int getMinimumDifference(TreeNode* root) {
+        traversal(root);
+        return result;
+    }
+};
+```
+
+是不是看上去也并不复杂！
+
+## 迭代
+
+看过这两篇[二叉树：听说递归能做的，栈也能做！](https://programmercarl.com/二叉树的迭代遍历.html)，[二叉树：前中后序迭代方式的写法就不能统一一下么？](https://programmercarl.com/二叉树的统一迭代法.html)文章之后，不难写出两种中序遍历的迭代法。
+
+下面我给出其中的一种中序遍历的迭代法，代码如下：
+
+* CPP
+
+```CPP
+class Solution {
+public:
+    int getMinimumDifference(TreeNode* root) {
+        stack<TreeNode*> st;
+        TreeNode* cur = root;
+        TreeNode* pre = NULL;
+        int result = INT_MAX;
+        while (cur != NULL || !st.empty()) {
+            if (cur != NULL) { // 指针来访问节点，访问到最底层
+                st.push(cur); // 将访问的节点放进栈
+                cur = cur->left;                // 左
+            } else {
+                cur = st.top();
+                st.pop();
+                if (pre != NULL) {              // 中
+                    result = min(result, cur->val - pre->val);
+                }
+                pre = cur;
+                cur = cur->right;               // 右
+            }
+        }
+        return result;
+    }
+};
+```
+
+# 总结
+
+**遇到在二叉搜索树上求什么最值，求差值之类的，都要思考一下二叉搜索树可是有序的，要利用好这一特点。**
+
+同时要学会在递归遍历的过程中如何记录前后两个指针，这也是一个小技巧，学会了还是很受用的。
+
+后面我将继续介绍一系列利用二叉搜索树特性的题目。
+
+# 其他语言版本
+
+* java  []
+
+```java  []
+// 递归
+class Solution {
+    TreeNode pre;// 记录上一个遍历的结点
+    int result = Integer.MAX_VALUE;
+    public int getMinimumDifference(TreeNode root) {
+       if(root==null)return 0;
+       traversal(root);
+       return result;
+    }
+    public void traversal(TreeNode root){
+        if(root==null)return;
+        //左
+        traversal(root.left);
+        //中
+        if(pre!=null){
+            result = Math.min(result,root.val-pre.val);
+        }
+        pre = root;
+        //右
+        traversal(root.right);
+    }
+}
+
+// 迭代法-中序遍历
+class Solution {
+    TreeNode pre;
+    Stack<TreeNode> stack;
+    public int getMinimumDifference(TreeNode root) {
+        if (root == null) return 0;
+        stack = new Stack<>();
+        TreeNode cur = root;
+        int result = Integer.MAX_VALUE;
+        while (cur != null || !stack.isEmpty()) {
+            if (cur != null) {
+                stack.push(cur); // 将访问的节点放进栈
+                cur = cur.left; // 左
+            }else {
+                cur = stack.pop(); 
+                if (pre != null) { // 中
+                    result = Math.min(result, cur.val - pre.val);
+                }
+                pre = cur;
+                cur = cur.right; // 右
+            }
+        }
+        return result;
+    }
+}
+```
+
+* []
+
+```python
+# 递归
+class Solution:
+    def getMinimumDifference(self, root: TreeNode) -> int:
+        res = []   
+        r = float("inf")
+        def buildaList(root):  //把二叉搜索树转换成有序数组
+            if not root: return None
+            if root.left: buildaList(root.left)  //左
+            res.append(root.val)  //中
+            if root.right: buildaList(root.right)  //右
+            return res
+            
+        buildaList(root)
+        for i in range(len(res)-1):  // 统计有序数组的最小差值
+            r = min(abs(res[i]-res[i+1]),r)
+        return r
+ 
+# 迭代法-中序遍历
+class Solution:
+    def getMinimumDifference(self, root: TreeNode) -> int:
+        stack = []
+        cur = root
+        pre = None
+        result = float('inf')
+        while cur or stack:
+            if cur: # 指针来访问节点，访问到最底层
+                stack.append(cur)
+                cur = cur.left
+            else: # 逐一处理节点
+                cur = stack.pop()
+                if pre: # 当前节点和前节点的值的差值
+                    result = min(result, abs(cur.val - pre.val))
+                pre = cur
+                cur = cur.right
+        return result
+        
+```
+
+* []
+
+```go
+// 中序遍历，然后计算最小差值
+func getMinimumDifference(root *TreeNode) int {
+    var res []int
+    findMIn(root,&res)
+    min:=1000000//一个比较大的值
+    for i:=1;i<len(res);i++{
+        tempValue:=res[i]-res[i-1]
+        if tempValue<min{
+            min=tempValue
+        }
+    }
+    return min
+}
+//中序遍历
+func findMIn(root *TreeNode,res *[]int){
+    if root==nil{return}
+    findMIn(root.Left,res)
+    *res=append(*res,root.Val)
+    findMIn(root.Right,res)
+}
+
+// 中序遍历的同时计算最小值
+func getMinimumDifference(root *TreeNode) int {
+    // 保留前一个节点的指针
+    var prev *TreeNode
+    // 定义一个比较大的值
+    min := math.MaxInt64
+    var travel func(node *TreeNode)
+    travel = func(node *TreeNode) {
+        if node == nil {
+            return 
+        }
+        travel(node.Left)
+        if prev != nil && node.Val - prev.Val < min {
+            min = node.Val - prev.Val
+        }
+        prev = node
+        travel(node.Right)
+    }
+    travel(root)
+    return min
+}
+```
+
+* []
+
+```javascript
+
+/** 递归 先转换为有序数组
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var getMinimumDifference = function (root) {
+    let arr = [];
+    const buildArr = (root) => {
+        if (root) {
+            buildArr(root.left);
+            arr.push(root.val);
+            buildArr(root.right);
+        }
+    }
+    buildArr(root);
+    let diff = arr[arr.length - 1];
+    for (let i = 1; i < arr.length; ++i) {
+        if (diff > arr[i] - arr[i - 1])
+            diff = arr[i] - arr[i - 1];
+    }
+    return diff;
+};
+
+// 递归 在递归的过程中更新最小值
+var getMinimumDifference = function(root) {
+    let res = Infinity
+    let preNode = null
+    // 中序遍历
+    const inorder = (node) => {
+        if(!node) return
+        inorder(node.left)
+        // 更新res
+        if(preNode) res = Math.min(res, node.val - preNode.val)
+        // 记录前一个节点         
+        preNode = node
+        inorder(node.right)
+    }
+    inorder(root)
+    return res
+}
+
+// 迭代  中序遍历
+var getMinimumDifference = function(root) {
+    let stack = []
+    let cur = root
+    let res = Infinity
+    let pre = null
+    while(cur || stack.length) {
+        if(cur) {
+            stack.push(cur)
+            cur = cur.left
+        } else {
+            cur = stack.pop()
+            if(pre) res = Math.min(res, cur.val - pre.val)
+            pre = cur
+            cur = cur.right
+        }
+    }
+    return res
+}
+```
+
+* []
+
+```typescript
+// > 辅助数组解决
+function getMinimumDifference(root: TreeNode | null): number {
+    let helperArr: number[] = [];
+    function recur(root: TreeNode | null): void {
+        if (root === null) return;
+        recur(root.left);
+        helperArr.push(root.val);
+        recur(root.right);
+    }
+    recur(root);
+    let resMin: number = Infinity;
+    for (let i = 0, length = helperArr.length; i < length - 1; i++) {
+        resMin = Math.min(resMin, helperArr[i + 1] - helperArr[i]);
+    }
+    return resMin;
+};
+
+// > 递归中解决
+function getMinimumDifference(root: TreeNode | null): number {
+    let preNode: TreeNode | null= null;
+    let resMin: number = Infinity;
+    function recur(root: TreeNode | null): void {
+        if (root === null) return;
+        recur(root.left);
+        if (preNode !== null) {
+            resMin = Math.min(resMin, root.val - preNode.val);
+        }
+        preNode = root;
+        recur(root.right);
+    }
+    recur(root);
+    return resMin;
+};
+
+// > 迭代法-中序遍历
+function getMinimumDifference(root: TreeNode | null): number {
+    const helperStack: TreeNode[] = [];
+    let curNode: TreeNode | null = root;
+    let resMin: number = Infinity;
+    let preNode: TreeNode | null = null;
+    while (curNode !== null || helperStack.length > 0) {
+        if (curNode !== null) {
+            helperStack.push(curNode);
+            curNode = curNode.left;
+        } else {
+            curNode = helperStack.pop()!;
+            if (preNode !== null) {
+                resMin = Math.min(resMin, curNode.val - preNode.val);
+            }
+            preNode = curNode;
+            curNode = curNode.right;
+        }
+    }
+    return resMin;
+};
+
+// 构建二叉树的有序数组:
+object Solution {
+  import scala.collection.mutable
+  def getMinimumDifference(root: TreeNode): Int = {
+    val arr = mutable.ArrayBuffer[Int]()
+    def traversal(node: TreeNode): Unit = {
+      if (node == null) return
+      traversal(node.left)
+      arr.append(node.value)
+      traversal(node.right)
+    }
+    traversal(root)
+    // 在有序数组上求最小差值
+    var result = Int.MaxValue
+    for (i <- 1 until arr.size) {
+      result = math.min(result, arr(i) - arr(i - 1))
+    }
+    result // 返回最小差值
+  }
+}
+```
+
+* []
+
+```scala
+// 递归记录前一个节点:
+object Solution {
+  def getMinimumDifference(root: TreeNode): Int = {
+    var result = Int.MaxValue // 初始化为最大值
+    var pre: TreeNode = null // 记录前一个节点
+
+    def traversal(cur: TreeNode): Unit = {
+      if (cur == null) return
+      traversal(cur.left)
+      if (pre != null) {
+        // 对比result与节点之间的差值
+        result = math.min(result, cur.value - pre.value)
+      }
+      pre = cur
+      traversal(cur.right)
+    }
+
+    traversal(root)
+    result // return关键字可以省略
+  }
+}
+
+// 迭代解决:
+object Solution {
+  import scala.collection.mutable
+  def getMinimumDifference(root: TreeNode): Int = {
+    var result = Int.MaxValue // 初始化为最大值
+    var pre: TreeNode = null // 记录前一个节点
+    var cur = root
+    var stack = mutable.Stack[TreeNode]()
+    while (cur != null || !stack.isEmpty) {
+      if (cur != null) {
+        stack.push(cur)
+        cur = cur.left
+      } else {
+        cur = stack.pop()
+        if (pre != null) {
+          result = math.min(result, cur.value - pre.value)
+        }
+        pre = cur
+        cur = cur.right
+      }
+    }
+    result // return关键字可以省略
+  }
+}
+```
+
+# 二叉树力扣题目总结
+
+按照如下顺序刷力扣上的题目，相信会帮你在学习二叉树的路上少走很多弯路。
+
+![image.png](https://pic.leetcode-cn.com/1625557068-rTzCSW-image.png)
+
+大家好，我是程序员Carl，如果你还在没有章法的刷题，**建议按照[代码随想录刷题路线](https://programmercarl.com/)来刷**，并提供[PDF下载](https://programmercarl.com/other/algo_pdf.html)，刷题路线同时也开源在[Github](https://github.com/youngyangyang04/leetcode-master)上，你会发现详见很晚！
+
+**如果感觉题解对你有帮助，不要吝啬给一个👍吧！**
