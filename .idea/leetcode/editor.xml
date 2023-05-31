@@ -234,13 +234,35 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[235]二叉搜索树的最近公共祖先.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[235]二叉搜索树的最近公共祖先.md" />
+              <option name="frontendQuestionId" value="leetcode.cn235" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[235]二叉搜索树的最近公共祖先.py" />
+              <option name="titleSlug" value="lowest-common-ancestor-of-a-binary-search-tree" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[236]Lowest Common Ancestor of a Binary Tree.cpp">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[236]Lowest Common Ancestor of a Binary Tree.md" />
+              <option name="frontendQuestionId" value="leetcode.cn236" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[236]Lowest Common Ancestor of a Binary Tree.cpp" />
+              <option name="titleSlug" value="lowest-common-ancestor-of-a-binary-tree" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[236]二叉树的最近公共祖先.py">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[236]二叉树的最近公共祖先.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[236]Lowest Common Ancestor of a Binary Tree.md" />
               <option name="frontendQuestionId" value="leetcode.cn236" />
               <option name="host" value="leetcode.cn" />
-              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[236]二叉树的最近公共祖先.py" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[236]Lowest Common Ancestor of a Binary Tree.cpp" />
               <option name="titleSlug" value="lowest-common-ancestor-of-a-binary-tree" />
             </LeetcodeEditor>
           </value>
