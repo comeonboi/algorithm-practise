@@ -4,6 +4,7 @@
 
 #ifndef ALGORITHM_PRACTISE_MAIN_H
 #define ALGORITHM_PRACTISE_MAIN_H
+#include "algorithm"
 #include "vector"
 #include "stack"
 #include "iostream"

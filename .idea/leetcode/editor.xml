@@ -498,6 +498,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[977]Squares of a Sorted Array.cpp">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[977]Squares of a Sorted Array.md" />
+              <option name="frontendQuestionId" value="leetcode.cn977" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[977]Squares of a Sorted Array.cpp" />
+              <option name="titleSlug" value="squares-of-a-sorted-array" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/[1017]负二进制转换.py">
           <value>
             <LeetcodeEditor>
@@ -655,10 +666,10 @@
         <entry key="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/[977]有序数组的平方.py">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/doc/content/[977]有序数组的平方.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[977]Squares of a Sorted Array.md" />
               <option name="frontendQuestionId" value="leetcode.cn977" />
               <option name="host" value="leetcode.cn" />
-              <option name="path" value="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/[977]有序数组的平方.py" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[977]Squares of a Sorted Array.cpp" />
               <option name="titleSlug" value="squares-of-a-sorted-array" />
             </LeetcodeEditor>
           </value>
