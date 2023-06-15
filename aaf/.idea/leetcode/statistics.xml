@@ -3,17 +3,6 @@
   <component name="LeetcodeEditorStatistics">
     <option name="statistics">
       <map>
-        <entry key="leetcode.cn">
-          <value>
-            <Statistics>
-              <option name="easy" value="9" />
-              <option name="hard" value="1" />
-              <option name="medium" value="6" />
-              <option name="questionTotal" value="2990" />
-              <option name="solvedTotal" value="16" />
-            </Statistics>
-          </value>
-        </entry>
         <entry key="leetcode.com">
           <value>
             <Statistics>
