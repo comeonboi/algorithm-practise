@@ -47,9 +47,16 @@ from typing import List
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
     def sortedSquares(self, nums: List[int]) -> List[int]:
-        nu = []
-        for i in nums:
-            nu.append(i * i)
-        nu.sort()
-        return nu
+        for i in range(len(nums)):
+            nums[i] = nums[i] * nums[i]
+        nums.sort()
+        return nums
+
+# class Solution:
+#     def sortedSquares(self, nums: List[int]) -> List[int]:
+#         nu = []
+#         for i in nums:
+#             nu.append(i * i)
+#         nu.sort()
+#         return nu
 # leetcode submit region end(Prohibit modification and deletion)
