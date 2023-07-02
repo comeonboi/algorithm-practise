@@ -872,13 +872,24 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[2]两数相加.go">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[2]两数相加.md" />
+              <option name="frontendQuestionId" value="leetcode.cn2" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[2]两数相加.go" />
+              <option name="titleSlug" value="add-two-numbers" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[2]两数相加.py">
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[2]两数相加.md" />
               <option name="frontendQuestionId" value="leetcode.cn2" />
               <option name="host" value="leetcode.cn" />
-              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[2]两数相加.py" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[2]两数相加.go" />
               <option name="titleSlug" value="add-two-numbers" />
             </LeetcodeEditor>
           </value>
