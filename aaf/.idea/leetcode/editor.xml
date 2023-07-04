@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LeetcodeEditor">
+    <option name="projectConfig">
+      <map>
+        <entry key="$PROJECT_DIR$/leetcode/editor/en/[1161]Maximum Level Sum of a Binary Tree.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetcode/editor/en/doc/content/[1161]Maximum Level Sum of a Binary Tree.md" />
+              <option name="frontendQuestionId" value="leetcode.com1161" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/leetcode/editor/en/[1161]Maximum Level Sum of a Binary Tree.py" />
+              <option name="titleSlug" value="maximum-level-sum-of-a-binary-tree" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="/var/folders/43/lqh_c64x6bx380z4gvcm1g1c0000gn/T/leetcode/editor/en/[1161]Maximum Level Sum of a Binary Tree.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetcode/editor/en/doc/content/[1161]Maximum Level Sum of a Binary Tree.md" />
+              <option name="frontendQuestionId" value="leetcode.com1161" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/leetcode/editor/en/[1161]Maximum Level Sum of a Binary Tree.py" />
+              <option name="titleSlug" value="maximum-level-sum-of-a-binary-tree" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

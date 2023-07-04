@@ -424,10 +424,10 @@
         <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[530]Minimum Absolute Difference in BST.cpp">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/doc/content/[530]二叉搜索树的最小绝对差.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[530]Minimum Absolute Difference in BST.md" />
               <option name="frontendQuestionId" value="leetcode.cn530" />
               <option name="host" value="leetcode.cn" />
-              <option name="path" value="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/[530]二叉搜索树的最小绝对差.py" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[530]Minimum Absolute Difference in BST.cpp" />
               <option name="titleSlug" value="minimum-absolute-difference-in-bst" />
             </LeetcodeEditor>
           </value>
@@ -435,10 +435,10 @@
         <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[530]二叉搜索树的最小绝对差.py">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/doc/content/[530]二叉搜索树的最小绝对差.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[530]Minimum Absolute Difference in BST.md" />
               <option name="frontendQuestionId" value="leetcode.cn530" />
               <option name="host" value="leetcode.cn" />
-              <option name="path" value="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/[530]二叉搜索树的最小绝对差.py" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[530]Minimum Absolute Difference in BST.cpp" />
               <option name="titleSlug" value="minimum-absolute-difference-in-bst" />
             </LeetcodeEditor>
           </value>
@@ -567,10 +567,10 @@
         <entry key="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/[209]长度最小的子数组.py">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/doc/content/[209]长度最小的子数组.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/doc/content/[209]长度最小的子数组.md" />
               <option name="frontendQuestionId" value="leetcode.cn209" />
               <option name="host" value="leetcode.cn" />
-              <option name="path" value="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/[209]长度最小的子数组.py" />
+              <option name="path" value="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/[209]长度最小的子数组.py" />
               <option name="titleSlug" value="minimum-size-subarray-sum" />
             </LeetcodeEditor>
           </value>
@@ -795,28 +795,6 @@
             </LeetcodeEditor>
           </value>
         </entry>
-        <entry key="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/[1161]最大层内元素和.py">
-          <value>
-            <LeetcodeEditor>
-              <option name="contentPath" value="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/doc/content/[1161]最大层内元素和.md" />
-              <option name="frontendQuestionId" value="leetcode.cn1161" />
-              <option name="host" value="leetcode.cn" />
-              <option name="path" value="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/[1161]最大层内元素和.py" />
-              <option name="titleSlug" value="maximum-level-sum-of-a-binary-tree" />
-            </LeetcodeEditor>
-          </value>
-        </entry>
-        <entry key="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/[1177]构建回文串检测.py">
-          <value>
-            <LeetcodeEditor>
-              <option name="contentPath" value="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/doc/content/[1177]构建回文串检测.md" />
-              <option name="frontendQuestionId" value="leetcode.cn1177" />
-              <option name="host" value="leetcode.cn" />
-              <option name="path" value="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/[1177]构建回文串检测.py" />
-              <option name="titleSlug" value="can-make-palindrome-from-substring" />
-            </LeetcodeEditor>
-          </value>
-        </entry>
         <entry key="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/[1373]二叉搜索子树的最大键值和.py">
           <value>
             <LeetcodeEditor>
@@ -825,17 +803,6 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/[1373]二叉搜索子树的最大键值和.py" />
               <option name="titleSlug" value="maximum-sum-bst-in-binary-tree" />
-            </LeetcodeEditor>
-          </value>
-        </entry>
-        <entry key="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/[1401]圆和矩形是否有重叠.py">
-          <value>
-            <LeetcodeEditor>
-              <option name="contentPath" value="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/doc/content/[1401]圆和矩形是否有重叠.md" />
-              <option name="frontendQuestionId" value="leetcode.cn1401" />
-              <option name="host" value="leetcode.cn" />
-              <option name="path" value="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/[1401]圆和矩形是否有重叠.py" />
-              <option name="titleSlug" value="circle-and-rectangle-overlapping" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -902,17 +869,6 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/[1]两数之和.py" />
               <option name="titleSlug" value="two-sum" />
-            </LeetcodeEditor>
-          </value>
-        </entry>
-        <entry key="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/[209]长度最小的子数组.py">
-          <value>
-            <LeetcodeEditor>
-              <option name="contentPath" value="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/doc/content/[209]长度最小的子数组.md" />
-              <option name="frontendQuestionId" value="leetcode.cn209" />
-              <option name="host" value="leetcode.cn" />
-              <option name="path" value="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/[209]长度最小的子数组.py" />
-              <option name="titleSlug" value="minimum-size-subarray-sum" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -1125,17 +1081,6 @@
             </LeetcodeEditor>
           </value>
         </entry>
-        <entry key="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/[530]二叉搜索树的最小绝对差.py">
-          <value>
-            <LeetcodeEditor>
-              <option name="contentPath" value="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/doc/content/[530]二叉搜索树的最小绝对差.md" />
-              <option name="frontendQuestionId" value="leetcode.cn530" />
-              <option name="host" value="leetcode.cn" />
-              <option name="path" value="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/[530]二叉搜索树的最小绝对差.py" />
-              <option name="titleSlug" value="minimum-absolute-difference-in-bst" />
-            </LeetcodeEditor>
-          </value>
-        </entry>
         <entry key="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/[541]反转字符串 II.py">
           <value>
             <LeetcodeEditor>
@@ -1166,17 +1111,6 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[704]二分查找.cpp" />
               <option name="titleSlug" value="binary-search" />
-            </LeetcodeEditor>
-          </value>
-        </entry>
-        <entry key="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/[783]二叉搜索树节点最小距离.py">
-          <value>
-            <LeetcodeEditor>
-              <option name="contentPath" value="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/doc/content/[783]二叉搜索树节点最小距离.md" />
-              <option name="frontendQuestionId" value="leetcode.cn783" />
-              <option name="host" value="leetcode.cn" />
-              <option name="path" value="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/[783]二叉搜索树节点最小距离.py" />
-              <option name="titleSlug" value="minimum-distance-between-bst-nodes" />
             </LeetcodeEditor>
           </value>
         </entry>
