@@ -8,8 +8,6 @@ class Solution:
 
         for i, j in zip(moveFrom, moveTo):
             if i in nums or i in num_mod:
-
-
                 ans.append(j)
                 if i in ans:
                     while i in ans:
@@ -18,8 +16,6 @@ class Solution:
                 if i in nums:
                     while i in nums:
                         nums.remove(i)
-
-
             print(ans, nums, num_mod)
         ans.extend(nums)
         return sorted(list(set(ans)))
