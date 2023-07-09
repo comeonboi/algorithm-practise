@@ -9,17 +9,42 @@ class Solution:
         for i, j in zip(moveFrom, moveTo):
             if i in nums or i in num_mod:
                 ans.append(j)
-                if i in ans:
+                if i in ans and i != j:
                     while i in ans:
                         ans.remove(i)
                 num_mod.append(j)
-                if i in nums:
+                if i in nums and i != j:
                     while i in nums:
                         nums.remove(i)
             print(ans, nums, num_mod)
         ans.extend(nums)
         return sorted(list(set(ans)))
 
+class Solution:
+    def relocateMarbles(self, nums: List[int], moveFrom: List[int], moveTo: List[int]) -> List[int]:
+        ans = set(nums)
+        num_mod = set()
+
+        for i, j in zip(moveFrom, moveTo):
+            if i in ans or i in num_mod:
+                ans.add(j)
+                if i != j:
+                    ans.discard(i)
+                num_mod.add(j)
+                nums = [x for x in nums if x != i]
+
+        ans.update(nums)
+        return sorted(ans)
+class Solution:
+    def relocateMarbles(self, nums: List[int], moveFrom: List[int], moveTo: List[int]) -> List[int]:
+        mapping = dict(zip(moveFrom, moveTo))
+        ans = []
+
+        for num in nums:
+            if num in mapping:
+                ans.append(mapping[num])
+
+        return sorted(ans)
 
 from collections import defaultdict
 
@@ -40,4 +65,4 @@ from collections import defaultdict
 #         return sorted(list(set(nums)))
 
 
-print(Solution().relocateMarbles(nums=[3, 4], moveFrom=[4, 3, 1, 2, 2, 3, 2, 4, 1], moveTo=[4, 3, 1, 2, 2, 3, 2, 4, 1]))
+print(Solution().relocateMarbles(nums = [1,6,7,8], moveFrom = [1,7,2], moveTo = [2,9,5]))
