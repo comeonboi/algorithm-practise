@@ -45,7 +45,13 @@ class Solution:
                 ans.append(mapping[num])
 
         return sorted(ans)
-
+class Solution:
+    def relocateMarbles(self, nums: List[int], moveFrom: List[int], moveTo: List[int]) -> List[int]:
+        cnt = set(nums)
+        for f, t in zip(moveFrom, moveTo):
+            cnt.remove(f)
+            cnt.add(t)
+        return sorted(cnt)
 from collections import defaultdict
 
 # class Solution:
