@@ -905,6 +905,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[415]字符串相加.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[415]字符串相加.md" />
+              <option name="frontendQuestionId" value="leetcode.cn415" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[415]字符串相加.py" />
+              <option name="titleSlug" value="add-strings" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[459]重复的子字符串.py">
           <value>
             <LeetcodeEditor>
