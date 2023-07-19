@@ -146,6 +146,28 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[16]最接近的三数之和.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[16]最接近的三数之和.md" />
+              <option name="frontendQuestionId" value="leetcode.cn16" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[16]最接近的三数之和.py" />
+              <option name="titleSlug" value="3sum-closest" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[1911]最大子序列交替和.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[1911]最大子序列交替和.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1911" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[1911]最大子序列交替和.py" />
+              <option name="titleSlug" value="maximum-alternating-subsequence-sum" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[19]Remove Nth Node From End of List.cpp">
           <value>
             <LeetcodeEditor>
@@ -209,6 +231,17 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="/var/folders/w1/cx0whcgd7hgbyrng4vx5pyx40000gn/T/leetcode/editor/cn/[20]有效的括号.py" />
               <option name="titleSlug" value="valid-parentheses" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[2178]拆分成最多数目的正偶数之和.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[2178]拆分成最多数目的正偶数之和.md" />
+              <option name="frontendQuestionId" value="leetcode.cn2178" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[2178]拆分成最多数目的正偶数之和.py" />
+              <option name="titleSlug" value="maximum-split-of-positive-even-integers" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -322,6 +355,28 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[2544]交替数字和.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[2544]交替数字和.md" />
+              <option name="frontendQuestionId" value="leetcode.cn2544" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[2544]交替数字和.py" />
+              <option name="titleSlug" value="alternating-digit-sum" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[2600]K 件物品的最大和.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[2600]K 件物品的最大和.md" />
+              <option name="frontendQuestionId" value="leetcode.cn2600" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[2600]K 件物品的最大和.py" />
+              <option name="titleSlug" value="k-items-with-the-maximum-sum" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[2679]矩阵中的和.py">
           <value>
             <LeetcodeEditor>
@@ -385,6 +440,17 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[349]Intersection of Two Arrays.cpp" />
               <option name="titleSlug" value="intersection-of-two-arrays" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[415]字符串相加.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[415]字符串相加.md" />
+              <option name="frontendQuestionId" value="leetcode.cn415" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[415]字符串相加.py" />
+              <option name="titleSlug" value="add-strings" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -495,6 +561,39 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[704]二分查找.cpp" />
               <option name="titleSlug" value="binary-search" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[874]模拟行走机器人.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[874]模拟行走机器人.md" />
+              <option name="frontendQuestionId" value="leetcode.cn874" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[874]模拟行走机器人.py" />
+              <option name="titleSlug" value="walking-robot-simulation" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[931]下降路径最小和.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[931]下降路径最小和.md" />
+              <option name="frontendQuestionId" value="leetcode.cn931" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[931]下降路径最小和.py" />
+              <option name="titleSlug" value="minimum-falling-path-sum" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[979]在二叉树中分配硬币.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[979]在二叉树中分配硬币.md" />
+              <option name="frontendQuestionId" value="leetcode.cn979" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[979]在二叉树中分配硬币.py" />
+              <option name="titleSlug" value="distribute-coins-in-binary-tree" />
             </LeetcodeEditor>
           </value>
         </entry>

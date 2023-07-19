@@ -43,17 +43,9 @@ from typing import List
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
     def matrixSum(self, nums: List[List[int]]) -> int:
-        for ind, i in enumerate(nums):
-            nums[ind].sort()
-        return sum(max(i) for i in zip(*nums))
+        return sum(max(i) for i in zip(*(sorted(sublist) for sublist in nums)))
 
-        # while len(nums) != 0:
-        #     for ind, i in enumerate(nums):
-        #         num += i.pop(i.index(max(i)))
-        #         if not i:
-        #             nums.pop(ind)
-        #             break
-        # return num
+
 
 # leetcode submit region end(Prohibit modification and deletion)
 print(Solution().matrixSum([[7,2,1],[6,4,2],[6,5,3],[3,2,1]]))
