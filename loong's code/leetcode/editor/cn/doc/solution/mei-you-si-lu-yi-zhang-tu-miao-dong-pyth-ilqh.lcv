@@ -1,0 +1,146 @@
+前置题目：[53. 最大子数组和](https://leetcode.cn/problems/maximum-subarray/)
+
+![lc918-c.png](https://pic.leetcode.cn/1689750394-drKSAI-lc918-c.png)
+
+## 答疑
+
+**问**：为什么当 $\textit{minS}=\text{sum}(nums)$ 时，最小子数组可以是整个数组？
+
+**答**：用反证法证明。假设最小子数组一定不是整个数组，这意味着 $\textit{nums}$ 的某个前缀或者后缀是大于 $0$ 的（包含这个前缀/后缀会让 $\textit{minS}$ 变大），所以 $\textit{minS}<\text{sum}(nums)$，矛盾。所以当 $\textit{minS}=\text{sum}(nums)$ 时，最小子数组可以是整个数组。
+
+> 注：对于 $\textit{nums}=[-1,1,-1]$，最小子数组可以取 $[-1]$，也可以取整个数组 $[-1,1,-1]$。对于这样的 $\textit{nums}$，最大子数组一定不会跨过边界，只返回 $\textit{maxS}$ 仍然是正确的。
+
+* [sol-Python3]
+
+```py
+class Solution:
+    def maxSubarraySumCircular(self, nums: List[int]) -> int:
+        max_s = -inf  # 最大子数组和，不能为空
+        min_s = 0     # 最小子数组和，可以为空
+        max_f = min_f = 0
+        for x in nums:
+            # 以 nums[i-1] 结尾的子数组选或不选（取 max）+ x = 以 x 结尾的最大子数组和
+            max_f = max(max_f, 0) + x
+            max_s = max(max_s, max_f)
+            # 以 nums[i-1] 结尾的子数组选或不选（取 min）+ x = 以 x 结尾的最小子数组和
+            min_f = min(min_f, 0) + x
+            min_s = min(min_s, min_f)
+        if sum(nums) == min_s:
+            return max_s
+        return max(max_s, sum(nums) - min_s)
+```
+
+* [sol-Java]
+
+```java
+class Solution {
+    public int maxSubarraySumCircular(int[] nums) {
+        int maxS = Integer.MIN_VALUE; // 最大子数组和，不能为空
+        int minS = 0; // 最小子数组和，可以为空
+        int maxF = 0, minF = 0, sum = 0;
+        for (int x : nums) {
+            // 以 nums[i-1] 结尾的子数组选或不选（取 max）+ x = 以 x 结尾的最大子数组和
+            maxF = Math.max(maxF, 0) + x;
+            maxS = Math.max(maxS, maxF);
+            // 以 nums[i-1] 结尾的子数组选或不选（取 min）+ x = 以 x 结尾的最小子数组和
+            minF = Math.min(minF, 0) + x;
+            minS = Math.min(minS, minF);
+            sum += x;
+        }
+        return sum == minS ? maxS : Math.max(maxS, sum - minS);
+    }
+}
+```
+
+* [sol-C++]
+
+```cpp
+class Solution {
+public:
+    int maxSubarraySumCircular(vector<int> &nums) {
+        int max_s = INT_MIN; // 最大子数组和，不能为空
+        int min_s = 0;       // 最小子数组和，可以为空
+        int max_f = 0, min_f = 0, sum = 0;
+        for (int x: nums) {
+            // 以 nums[i-1] 结尾的子数组选或不选（取 max）+ x = 以 x 结尾的最大子数组和
+            max_f = max(max_f, 0) + x;
+            max_s = max(max_s, max_f);
+            // 以 nums[i-1] 结尾的子数组选或不选（取 min）+ x = 以 x 结尾的最小子数组和
+            min_f = min(min_f, 0) + x;
+            min_s = min(min_s, min_f);
+            sum += x;
+        }
+        return sum == min_s ? max_s : max(max_s, sum - min_s);
+    }
+};
+```
+
+* [sol-Go]
+
+```go
+func maxSubarraySumCircular(nums []int) int {
+    maxS := math.MinInt // 最大子数组和，不能为空
+    minS := 0           // 最小子数组和，可以为空
+    var maxF, minF, sum int
+    for _, x := range nums {
+        // 以 nums[i-1] 结尾的子数组选或不选（取 max）+ x = 以 x 结尾的最大子数组和
+        maxF = max(maxF, 0) + x
+        maxS = max(maxS, maxF)
+        // 以 nums[i-1] 结尾的子数组选或不选（取 min）+ x = 以 x 结尾的最小子数组和
+        minF = min(minF, 0) + x
+        minS = min(minS, minF)
+        sum += x
+    }
+    if sum == minS {
+        return maxS
+    }
+    return max(maxS, sum-minS)
+}
+
+func min(a, b int) int { if b < a { return b }; return a }
+func max(a, b int) int { if b > a { return b }; return a }
+```
+
+* [sol-JavaScript]
+
+```js
+var maxSubarraySumCircular = function (nums) {
+    let maxS = Number.MIN_SAFE_INTEGER; // 最大子数组和，不能为空
+    let minS = 0; // 最小子数组和，可以为空
+    let maxF = 0, minF = 0, sum = 0;
+    for (const x of nums) {
+        // 以 nums[i-1] 结尾的子数组选或不选（取 max）+ x = 以 x 结尾的最大子数组和
+        maxF = Math.max(maxF, 0) + x;
+        maxS = Math.max(maxS, maxF);
+        // 以 nums[i-1] 结尾的子数组选或不选（取 min）+ x = 以 x 结尾的最小子数组和
+        minF = Math.min(minF, 0) + x;
+        minS = Math.min(minS, minF);
+        sum += x;
+    }
+    return sum === minS ? maxS : Math.max(maxS, sum - minS);
+};
+```
+
+#### 复杂度分析
+
+- 时间复杂度：$\mathcal{O}(n)$，其中 $n$ 为 $\textit{nums}$ 的长度。
+- 空间复杂度：$\mathcal{O}(1)$。仅用到若干额外变量。
+
+## 思考题
+
+如果改成选**两个**不重叠的非空连续子数组，这两个子数组的元素和最大是多少？
+
+- 非环形数组：[P2642 双子序列最大和](https://www.luogu.com.cn/problem/P2642)
+- 环形数组：[P1121 环状最大两段子段和](https://www.luogu.com.cn/problem/P1121)
+
+## 相似题目
+
+- [53. 最大子数组和](https://leetcode.cn/problems/maximum-subarray/)
+- [2606. 找到最大开销的子字符串](https://leetcode.cn/problems/find-the-substring-with-maximum-cost/)
+- [2321. 拼接数组的最大分数](https://leetcode.cn/problems/maximum-score-of-spliced-array/)
+- [1186. 删除一次得到子数组最大和](https://leetcode.cn/problems/maximum-subarray-sum-with-one-deletion/)
+- [363. 矩形区域不超过 K 的最大数值和](https://leetcode.cn/problems/max-sum-of-rectangle-no-larger-than-k/)
+
+[往期每日一题题解（按 tag 分类）](https://github.com/EndlessCheng/codeforces-go/blob/master/leetcode/SOLUTIONS.md)
+
+欢迎关注 [B站@灵茶山艾府](https://space.bilibili.com/206214)
