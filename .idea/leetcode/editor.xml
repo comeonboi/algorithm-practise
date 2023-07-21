@@ -135,6 +135,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[1499]满足不等式的最大值.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[1499]满足不等式的最大值.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1499" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[1499]满足不等式的最大值.py" />
+              <option name="titleSlug" value="max-value-of-equation" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[150]逆波兰表达式求值.py">
           <value>
             <LeetcodeEditor>
@@ -220,6 +231,17 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[202]Happy Number.cpp" />
               <option name="titleSlug" value="happy-number" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[209]长度最小的子数组.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[209]长度最小的子数组.md" />
+              <option name="frontendQuestionId" value="leetcode.cn209" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[209]长度最小的子数组.py" />
+              <option name="titleSlug" value="minimum-size-subarray-sum" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -575,6 +597,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[918]环形子数组的最大和.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[918]环形子数组的最大和.md" />
+              <option name="frontendQuestionId" value="leetcode.cn918" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[918]环形子数组的最大和.py" />
+              <option name="titleSlug" value="maximum-sum-circular-subarray" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[931]下降路径最小和.py">
           <value>
             <LeetcodeEditor>
@@ -677,10 +710,10 @@
         <entry key="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/[209]长度最小的子数组.py">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/doc/content/[209]长度最小的子数组.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/doc/content/[209]长度最小的子数组.md" />
               <option name="frontendQuestionId" value="leetcode.cn209" />
               <option name="host" value="leetcode.cn" />
-              <option name="path" value="$PROJECT_DIR$/龙龙代码随想录/leetcode/editor/cn/[209]长度最小的子数组.py" />
+              <option name="path" value="$PROJECT_DIR$/loong's code/leetcode/editor/cn/[209]长度最小的子数组.py" />
               <option name="titleSlug" value="minimum-size-subarray-sum" />
             </LeetcodeEditor>
           </value>
