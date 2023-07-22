@@ -1,0 +1,58 @@
+### 思路
+
+1. 使用单调栈，【[单调栈入门](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/solution/84-by-ikaruga/)】
+
+2. 单调递减栈
+
+   21. 理解题目，参考图解，注意题目的性质，当后面的柱子高度比前面的低时，是无法接雨水的
+   22. 当找到一根比前面高的柱子，就可以计算接到的雨水
+   23. 所以使用单调递减栈
+3. 对更低的柱子入栈
+
+   31. 更低的柱子以为这后面如果能找到高柱子，这里就能接到雨水，所以入栈把它保存起来
+   32. 平地相当于高度 0 的柱子，没有什么特别影响
+4. 当出现高于栈顶的柱子时
+
+   41. 说明可以对前面的柱子结算了
+   42. 计算已经到手的雨水，然后出栈前面更低的柱子
+5. 计算雨水的时候需要注意的是
+   51. 雨水区域的右边 `r` 指的自然是当前索引 `i`
+   52. 底部是栈顶 `st.top()` ，因为遇到了更高的右边，所以它即将出栈，使用 `cur` 来记录它，并让它出栈
+   53. 左边 `l` 就是新的栈顶 `st.top()`
+   54. 雨水的区域全部确定了，水坑的高度就是左右两边更低的一边减去底部，宽度是在左右中间
+   55. 使用乘法即可计算面积
+
+### 图解
+
+<![图片.png](https://pic.leetcode-cn.com/560d6232993961a9e95608595013064712e9b7ea769a20175ae68b7fa9510041-%E5%9B%BE%E7%89%87.png),![图片.png](https://pic.leetcode-cn.com/9f74f1cf461b56d9c2cf016674190211319faeead9c7ff919a9bddda43131272-%E5%9B%BE%E7%89%87.png),![图片.png](https://pic.leetcode-cn.com/b54d427eb60369785e90d5977ba3306559f4049f5fcb9c04f7c1e14126bd9669-%E5%9B%BE%E7%89%87.png),![图片.png](https://pic.leetcode-cn.com/1ffffe08addd5b96cdc4a7b6b8104e689946ba877defd2ff34a342e0347c33c5-%E5%9B%BE%E7%89%87.png),![图片.png](https://pic.leetcode-cn.com/0e1a9e0f7842b21ddf191979907dc4979e3c9160dbac3d722430e9a87c1e5e35-%E5%9B%BE%E7%89%87.png),![图片.png](https://pic.leetcode-cn.com/55c4e22da1a632c8dcf4ed278c906899ebbcb58bf66982a488903ef3355fbab4-%E5%9B%BE%E7%89%87.png)>
+
+### 答题
+
+* []]
+
+```C++
+int trap(vector<int>& height)
+{
+    int ans = 0;
+    stack<int> st;
+    for (int i = 0; i < height.size(); i++)
+    {
+        while (!st.empty() && height[st.top()] < height[i])
+        {
+            int cur = st.top();
+            st.pop();
+            if (st.empty()) break;
+            int l = st.top();
+            int r = i;
+            int h = min(height[r], height[l]) - height[cur];
+            ans += (r - l - 1) * h;
+        }
+        st.push(i);
+    }
+    return ans;
+}
+```
+
+### 致谢
+
+感谢您的观看，希望对您有帮助，欢迎热烈的交流！
